@@ -267,6 +267,22 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
 .next .wrap{position:relative;z-index:2}
 .n-title{display:block;margin-top:1.2rem;font:500 clamp(2.6rem,8.6vw,9.6rem)/.92 var(--disp);letter-spacing:-.07em}
 
+
+.films.vert{grid-template-columns:repeat(4,minmax(0,1fr))}
+.films.vert figure{grid-column:auto!important}
+.films.vert video{aspect-ratio:9/16}
+.gal.gal3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gal video{width:100%;height:100%;object-fit:cover;border-radius:4px;background:var(--bg2);display:block}
+.gal figure.w video,.gal figure.h video{aspect-ratio:16/9}
+.gal figure.q img{aspect-ratio:1/1}
+.gal.gal3 figure.h img{aspect-ratio:16/9}
+.gal figure.p img{aspect-ratio:9/16}
+.c-link{display:inline-flex;gap:.6rem;align-items:center;margin-top:1.8rem;padding:1rem 1.5rem;border-radius:99px;background:var(--ink);color:var(--bg);font:500 1rem var(--body);transition:background .3s,color .3s}
+.c-link:hover{background:var(--accent);color:#fff}
+.c-link i{font-style:normal}
+#pv>img{object-fit:cover}
+@media (max-width:1100px){.films.vert{grid-template-columns:repeat(2,minmax(0,1fr))}.gal.gal3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 /* responsive */
 @media (max-width:1100px){
   .idx-head,.row{grid-template-columns:3rem 1fr 12rem 4rem}
@@ -294,6 +310,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
   .svc-row{grid-template-columns:2.5rem 1fr}
   .svc-row>div:last-child{grid-column:2}
   .aud,.films,.gal,.c-res{grid-template-columns:1fr}
+  .films.vert,.gal.gal3{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr 1fr}
   .c-back{left:16px;top:58px}
 }
@@ -360,7 +377,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
 
   <section class="sec" id="work">
     <div class="wrap">
-      <div class="sec-top"><h2><span data-i="workH"></span><sup>(05)</sup></h2><p data-i="workP"></p></div>
+      <div class="sec-top"><h2><span data-i="workH"></span><sup id="workCount">(05)</sup></h2><p data-i="workP"></p></div>
       <div class="idx-head mono"><span>#</span><span data-i="cProject"></span><span class="r-client" data-i="cClient"></span><span data-i="cDisc"></span><span data-i="cYear"></span></div>
       <div class="rows" id="rows"></div>
     </div>
@@ -440,18 +457,91 @@ var P=[
   res:[['8',{en:'videos',uk:'відео'}],['200k',{en:'people reached',uk:'охоплення'}],['4',{en:'communities',uk:'громади'}]],
   films:[['cavemen',{en:'Cavemen',uk:'Печерні люди'}],['neighbors',{en:'Neighbours',uk:'Сусіди'}],['sofa',{en:'Sofa',uk:'Диван'}],['dreams',{en:'Dreams',uk:'Мрії'}],['fire',{en:'Fire',uk:'Вогонь'}]].map(function(f){return {src:A+'1325/'+f[0]+'.mp4',poster:A+'1325/p-'+f[0]+'.webp',cap:f[1]}}),
   gal:[{src:A+'1325/cover.webp',k:'h'},{src:A+'1325/hero.webp',k:'h'}]},
- {id:'ua-export',no:'02',color:'#1d4fd1',c2:'#ffd23f',year:'2024',gen:true,
+
+ {id:'1325-strengthens',no:'02',color:'#1f6b45',c2:'#f26b4f',year:'2025',
+  title:{en:'1325 Strengthens the Country',uk:'1325 зміцнює країну'},
+  short:{en:'Open Society',uk:'Відкрите суспільство'},
+  client:{en:'NGO “Open Society” and the “Vinnychchyna 1325” coalition, supported by the Ukrainian Women’s Fund',uk:'ГО «Відкрите суспільство» та коаліція «Вінниччина 1325», за підтримки Українського жіночого фонду'},
+  disc:{en:'Reels campaign',uk:'Кампанія рілсів'},
+  loop:A+'1325b/loop.mp4',poster:A+'1325b/loop.webp',
+  lead:{en:'An information campaign in vertical video: short explainers on Resolution 1325 and real stories of villages where women made their communities safer.',uk:'Інформаційна кампанія у вертикальних відео: короткі пояснення резолюції 1325 і реальні історії громад, де жінки зробили життя безпечнішим.'},
+  challenge:{en:'Ukraine has a National Action Plan on Women, Peace and Security, but most communities do not have their own. The campaign had to show what the Resolution means on a local street, and what a community can start doing tomorrow.',uk:'В Україні є Національний план «Жінки. Мир. Безпека», але більшість громад не має власного. Кампанія мала показати, що означає резолюція на конкретній вулиці, і що громада може почати робити вже завтра.'},
+  did:{en:['Scripts and voice-over for every video','5 animated explainers: three pillars of a safe community, 4 steps to a local plan, women in the security sector, economic resilience, where to get help','3 documentary stories filmed in Desna, Horodkivka and other communities','Motion design in the campaign’s visual system, vertical format for Reels, Shorts and TikTok'],uk:['Сценарії та озвучка для кожного відео','5 анімаційних пояснень: три кити безпечної громади, 4 кроки до місцевого плану, жінки в секторі безпеки, економічна стійкість, куди звертатися по допомогу','3 документальні історії, зняті в Десні, Городківці та інших громадах','Моушн-дизайн у візуальній системі кампанії, вертикальний формат для Reels, Shorts і TikTok']},
+  res:[['8',{en:'vertical videos',uk:'вертикальних відео'}],['5',{en:'animated explainers',uk:'анімаційних пояснень'}],['3',{en:'community stories',uk:'історії громад'}]],
+  vert:true,
+  films:[['pillars',{en:'Three pillars of a safe community',uk:'Три кити безпечної громади'}],['steps',{en:'4 steps to a local plan',uk:'4 кроки до місцевого плану'}],['defence',{en:'Women in the security sector',uk:'Жінки в секторі безпеки'}],['economy',{en:'Economic resilience',uk:'Економічна стійкість'}],['care',{en:'Where to get help',uk:'Куди звертатися по допомогу'}],['desna',{en:'Safe Desna',uk:'Безпечна Десна'}],['horodkivka',{en:'Horodkivka: from cameras to trust',uk:'Городківка: від камер до довіри'}],['participation',{en:'Where women create change',uk:'Місце, де жінки творять зміни'}]].map(function(f){return {src:A+'1325b/'+f[0]+'.mp4',poster:A+'1325b/'+f[0]+'.webp',cap:f[1]}})},
+
+ {id:'ua-export',no:'03',color:'#1d4fd1',c2:'#ffd23f',year:'2024',
   title:{en:'UA export',uk:'UA export'},
   short:{en:'Enterprise Development Center',uk:'Центр розвитку підприємства'},
   client:{en:'Enterprise Development Center',uk:'Центр розвитку підприємства'},
   disc:{en:'Presentation films',uk:'Презентаційні відео'},dur:{en:'6 months',uk:'6 місяців'},
+  loop:A+'uaexport/loop.mp4',poster:A+'uaexport/loop.webp',
   lead:{en:'Presentation films that bring regional Ukrainian manufacturers in front of European partners.',uk:'Презентаційні фільми, що виводять регіональних українських виробників до європейських партнерів.'},
   challenge:{en:'Medium and large businesses in Ukrainian communities rarely have strong presentation materials. That slows their growth and keeps them invisible on other markets.',uk:'Великий і середній бізнес у громадах далеко не завжди має якісні представницькі матеріали. Це гальмує масштабування й присутність на інших ринках.'},
   did:{en:['Filming at 8 enterprises','A film for each company','Versions for distribution in Europe'],uk:['Зйомки на 8 підприємствах','Фільм для кожної компанії','Версії для поширення в Європі']},
   hard:{en:'Some of the plants were worn. We built every film on close details, so we never needed the wide shot.',uk:'Деякі підприємства були трохи занедбані. Ми будували кожен фільм на деталях, щоб не брати загальний план.'},
   res:[['8',{en:'films',uk:'відео'}],['100k',{en:'views in Europe',uk:'охоплення в Європі'}],['3',{en:'companies found European partners',uk:'підприємства знайшли партнерів у Європі'}]],
-  note:{en:'Films from this project will be added here soon.',uk:'Фільми цього проєкту незабаром зʼявляться тут.'}},
- {id:'kness',no:'03',color:'#141a2c',c2:'#f5c32c',year:'2020',
+  films:[{src:A+'uaexport/film.mp4',poster:A+'uaexport/s1.webp',cap:{en:'UA export, presentation film',uk:'UA export, презентаційний фільм'},wide:true}],
+  gal:[{src:A+'uaexport/s6.webp',k:'h'},{src:A+'uaexport/s17.webp',k:'h'},{src:A+'uaexport/s24.webp',k:'h'},{src:A+'uaexport/s30.webp',k:'h'},{src:A+'uaexport/s36.webp',k:'w'}]},
+
+ {id:'lets-discuss',no:'04',color:'#3b2fd6',c2:'#3be3a8',year:'2023–24',
+  title:{en:'Let’s Discuss',uk:'Let’s Discuss'},
+  short:{en:'SetUp · USAID / IREX',uk:'SetUp · USAID / IREX'},
+  client:{en:'NGO SetUp, with support from USAID and IREX; partners: Institute of Debate Brazil and Namibia Debate Union',uk:'ГО «Сетап», за підтримки USAID та IREX; партнери: Institute of Debate Brazil та Namibia Debate Union'},
+  disc:{en:'Communication campaign',uk:'Комунікаційна кампанія'},dur:{en:'8 months',uk:'8 місяців'},
+  loop:A+'letsdiscuss/loop.mp4',poster:A+'letsdiscuss/loop.webp',
+  lead:{en:'An international youth dialogue platform that connected young people from Ukraine, Brazil and Namibia, and the campaign that brought them to the table.',uk:'Міжнародна платформа діалогів, що поєднала молодь України, Бразилії та Намібії, і кампанія, яка привела їх до спільного столу.'},
+  challenge:{en:'Young people in Brazil and Namibia mostly knew Ukraine through other people’s media. We had to recruit hundreds of participants on three continents and make a video call with strangers feel worth joining.',uk:'Молодь Бразилії та Намібії здебільшого знала Україну з чужих медіа. Треба було зібрати сотні учасників на трьох континентах і зробити так, щоб відеозустріч із незнайомцями хотілося не пропустити.'},
+  did:{en:['Communication plan, key messages and content plan','Visual identity of the project and posts in two languages','Recruitment campaign in Ukraine, Brazil and Namibia','Offline presentations in Vinnytsia and Dnipro','Video testimonies of participants with subtitles','Certificates and materials for 17 dialogue sessions and 2 ideathons'],uk:['Комунікаційний план, ключові повідомлення й контент-план','Айдентика проєкту та публікації двома мовами','Кампанія з набору учасників в Україні, Бразилії та Намібії','Офлайн-презентації у Вінниці та Дніпрі','Відеовідгуки учасників із субтитрами','Сертифікати й матеріали для 17 діалогових зустрічей і 2 ідеатонів']},
+  hard:{en:'Letting the participants speak. Real quotes went into the posts, and their own videos told the story better than any slogan.',uk:'Дати слово самим учасникам. Справжні цитати потрапили в пости, а їхні власні відео розповіли історію краще за будь-яке гасло.'},
+  res:[['512',{en:'registrations from 3 countries',uk:'реєстрацій із 3 країн'}],['17',{en:'dialogue sessions',uk:'діалогових зустрічей'}],['72.8%',{en:'of Ukrainian participants learned more about peers abroad',uk:'українських учасників дізналися більше про однолітків за кордоном'}]],
+  vert:true,
+  films:[{src:A+'letsdiscuss/film1.mp4',poster:A+'letsdiscuss/film1.webp',cap:{en:'Participants on the project, part 1',uk:'Учасники про проєкт, частина 1'}},{src:A+'letsdiscuss/film2.mp4',poster:A+'letsdiscuss/film2.webp',cap:{en:'Participants on the project, part 2',uk:'Учасники про проєкт, частина 2'}}],
+  galCols:3,
+  gal:['d1','d2','d3','d4','d6','d7','d11','d12','d13','d14','d15','d9'].map(function(n){return {src:A+'letsdiscuss/'+n+'.webp',k:'q'}}).concat([{src:A+'letsdiscuss/art1.webp',k:'w'}])},
+
+ {id:'dialogue-plus',no:'05',color:'#0d3f8f',c2:'#ffd23f',year:'2022–23',
+  title:{en:'Dialogue+',uk:'Діалог+'},
+  short:{en:'SetUp · UNDP',uk:'SetUp · ПРООН'},
+  client:{en:'NGO SetUp, within the UNDP programme “Moving Forward Together” with EU support',uk:'ГО «Сетап», у межах програми ПРООН «Прямуємо разом» за підтримки ЄС'},
+  disc:{en:'Video & event identity',uk:'Відео та айдентика подій'},dur:{en:'8 months',uk:'8 місяців'},
+  loop:A+'undp/loop.mp4',poster:A+'undp/loop.webp',
+  lead:{en:'A project that helped people displaced by the war and local residents of Vinnytsia region get to know each other, with a promo film, a city film and a visual system for every event.',uk:'Проєкт, що допомагав внутрішньо переміщеним людям і мешканцям Вінниччини знайомитися й діяти разом: промо-ролик, фільм про місто та візуальна система для кожної події.'},
+  challenge:{en:'After the full-scale invasion Vinnytsia received thousands of displaced people. The project needed one recognisable look for a forum, meetings, workshops and excursions, and a film that speaks about tolerance without preaching.',uk:'Після повномасштабного вторгнення Вінниця прийняла тисячі переселенців. Проєкту потрібен був один упізнаваний стиль для форуму, зустрічей, майстер-класів та екскурсій і ролик про толерантність без моралізаторства.'},
+  did:{en:['Promo video starring participants of the project, with an advertising campaign in Vinnytsia region','Film “Vinnytsia, the city where you want to be”','Templates for event announcements in the programme’s branding','Posters for the excursion series'],uk:['Промо-ролик за участі самих учасниць проєкту та рекламна кампанія на Вінниччині','Фільм «Вінниця — місто, де хочеться»','Шаблони анонсів подій у брендингу програми','Постери для циклу екскурсій']},
+  res:[['58k',{en:'video views in the ad campaign',uk:'переглядів ролика в рекламній кампанії'}],['118',{en:'forum participants',uk:'учасників форуму'}],['15',{en:'organisations at the forum',uk:'організацій на форумі'}]],
+  films:[{src:A+'undp/promo.mp4',poster:A+'undp/promo.webp',cap:{en:'Promo video, UNDP × EU',uk:'Промо-ролик, ПРООН × ЄС'}},{src:A+'undp/vinnytsia.mp4',poster:A+'undp/vinnytsia.webp',cap:{en:'Vinnytsia, the city where you want to be',uk:'Вінниця — місто, де хочеться'}}],
+  galCols:3,
+  gal:[{src:A+'undp/t1.webp',k:'q'},{src:A+'undp/t2.webp',k:'q'},{src:A+'undp/t3.webp',k:'q'},{src:A+'undp/e1.webp',k:'q'},{src:A+'undp/e2.webp',k:'q'},{src:A+'undp/t4.webp',k:'q'},{src:A+'undp/v33.webp',k:'w'}]},
+
+ {id:'human-rights-plus',no:'06',color:'#3b2fd6',c2:'#ff6f4f',year:'2021',
+  title:{en:'Human Rights+',uk:'Human Rights+'},
+  short:{en:'SetUp · Human Rights House',uk:'SetUp · Human Rights House'},
+  client:{en:'NGO SetUp, with support from Human Rights House Foundation and the EU',uk:'ГО «Сетап», за підтримки Human Rights House Foundation та ЄС'},
+  disc:{en:'Online course & identity',uk:'Онлайн-курс та айдентика'},
+  loop:null,poster:A+'hrplus/y1.webp',img:A+'hrplus/y1.webp',
+  lead:{en:'An online course on human rights built on debate: we gave it a look and a video series people actually finish.',uk:'Онлайн-курс про права людини на основі дебатних технологій: ми дали йому образ і серію відео, яку справді додивляються.'},
+  challenge:{en:'Human rights sound like a lecture topic. The course had to feel like a conversation and keep young people for ten lessons.',uk:'Права людини звучать як тема для лекції. Курс мав відчуватися як розмова й утримати молодь на десять занять.'},
+  did:{en:['Course identity: logo, brandbook, colours','Registration campaign and speaker announcements','Filming and editing of the video lessons','YouTube covers for the series','Merch and certificates','Debate tournament and training for debate leaders'],uk:['Айдентика курсу: лого, брендбук, кольори','Кампанія з реєстрації та анонси спікерів','Зйомка й монтаж відеоуроків','Обкладинки серії для YouTube','Мерч і сертифікати','Дебатний турнір і тренінг для лідерів дебатного руху']},
+  res:[['10',{en:'video lessons',uk:'відеоуроків'}],['3',{en:'speakers',uk:'спікери'}],['2',{en:'weeks online',uk:'тижні онлайн'}]],
+  link:{url:'https://www.youtube.com/watch?v=ATiO46T1zxY&list=PLak942P4eDoB5ayEItFp2XKE7YrcminIa',label:{en:'Watch the course on YouTube',uk:'Дивитися курс на YouTube'}},
+  galCols:3,
+  gal:[{src:A+'hrplus/y1.webp',k:'w'},{src:A+'hrplus/h1.webp',k:'q'},{src:A+'hrplus/h3.webp',k:'q'},{src:A+'hrplus/h4.webp',k:'q'},{src:A+'hrplus/y2.webp',k:'h'},{src:A+'hrplus/y3.webp',k:'h'},{src:A+'hrplus/tour.webp',k:'q'},{src:A+'hrplus/tee.webp',k:'h'},{src:A+'hrplus/h5.webp',k:'h'}]},
+
+ {id:'setup',no:'07',color:'#2b22a8',c2:'#3be3a8',year:'2021–24',
+  title:{en:'SetUp',uk:'SetUp'},
+  short:{en:'SetUp',uk:'SetUp'},
+  client:{en:'SetUp, an education platform for debate and communication',uk:'SetUp, освітня платформа дебатів і комунікацій'},
+  disc:{en:'Identity & film',uk:'Айдентика та відео'},
+  loop:A+'setup/loop.mp4',poster:A+'setup/loop.webp',
+  lead:{en:'An identity and a brand film for an education platform about debate, leadership and dialogue.',uk:'Айдентика й бренд-фільм для освітньої платформи про дебати, лідерство та діалог.'},
+  challenge:{en:'Courses, tournaments, merch and partner projects needed one recognisable visual language that the team could use without a designer.',uk:'Курсам, турнірам, мерчу та партнерським проєктам потрібна була одна впізнавана візуальна мова, якою команда може користуватись без дизайнера.'},
+  did:{en:['Logo and brandbook','Collage brand film','Social media templates and stories','Presentations for debate courses','Visuals for tournaments and partner programmes (GMF, Phoenix Cup)','Outdoor, merch and website design'],uk:['Логотип і брендбук','Колажний бренд-фільм','Шаблони для соцмереж і сторіз','Презентації для курсів дебатів','Візуали для турнірів і партнерських програм (GMF, Phoenix Cup)','Зовнішня реклама, мерч і дизайн сайту']},
+  films:[{src:A+'setup/film.mp4',poster:A+'setup/loop.webp',cap:{en:'SetUp brand film',uk:'Бренд-фільм SetUp'},wide:true}],
+  gal:[{src:A+'setup/site.webp',k:'w'},{src:A+'setup/templates.webp',k:'h'},{src:A+'setup/colors.webp',k:'h'},{src:A+'setup/pres1.webp',k:'h'},{src:A+'setup/pres2.webp',k:'h'},{src:A+'setup/league.webp',k:'h'},{src:A+'setup/gmf1.webp',k:'h'},{src:A+'setup/ooh.webp',k:'w'},{src:A+'setup/phoenix.webp',k:'h'},{src:A+'setup/gmf2.webp',k:'h'},{src:A+'setup/bag.webp',k:'h'},{src:A+'setup/hoodie.webp',k:'h'}]},
+
+ {id:'kness',no:'08',color:'#141a2c',c2:'#f5c32c',year:'2020',
   title:{en:'KNESS Service',uk:'KNESS Service'},
   short:{en:'KNESS Service',uk:'KNESS Service'},
   client:{en:'KNESS Service, solar power plant operation and maintenance',uk:'KNESS Service, експлуатація та обслуговування сонячних електростанцій'},
@@ -463,18 +553,8 @@ var P=[
   res:[['4',{en:'films',uk:'ролики'}],['2',{en:'languages, UA and EN',uk:'мови, UA та EN'}],['83s',{en:'main service film',uk:'основний сервісний фільм'}]],
   films:[{src:A+'kness/film.mp4',poster:A+'kness/s1.webp',cap:{en:'Short version, 30 s',uk:'Коротка версія, 30 с'},wide:true}],
   gal:[{src:A+'kness/s2.webp',k:'h'},{src:A+'kness/s3.webp',k:'h'},{src:A+'kness/s4.webp',k:'h'},{src:A+'kness/s5.webp',k:'h'}]},
- {id:'setup',no:'04',color:'#2b22a8',c2:'#3be3a8',year:'2022–23',
-  title:{en:'SetUp',uk:'SetUp'},
-  short:{en:'SetUp',uk:'SetUp'},
-  client:{en:'SetUp, an education platform for debate and communication',uk:'SetUp, освітня платформа дебатів і комунікацій'},
-  disc:{en:'Identity & film',uk:'Айдентика та відео'},
-  loop:A+'setup/loop.mp4',poster:A+'setup/loop.webp',
-  lead:{en:'An identity and a film for an education platform about debate, leadership and dialogue.',uk:'Айдентика й фільм для освітньої платформи про дебати, лідерство та діалог.'},
-  challenge:{en:'Courses, events, merch and partner projects needed one recognisable visual language that the team could use without a designer.',uk:'Курсам, подіям, мерчу та партнерським проєктам потрібна була одна впізнавана візуальна мова, якою команда може користуватись без дизайнера.'},
-  did:{en:['Logo and brandbook','Social media templates','Outdoor and merch','Website design','Promo film for “Dialogue+” with UNDP and the EU'],uk:['Логотип і брендбук','Шаблони для соцмереж','Зовнішня реклама та мерч','Дизайн сайту','Промо-відео «Dialogue+» з ПРООН та ЄС']},
-  films:[{src:A+'setup/film.mp4',poster:A+'setup/loop.webp',cap:{en:'“Dialogue+” promo, UNDP × EU',uk:'Промо «Dialogue+», ПРООН × ЄС'},wide:true}],
-  gal:[{src:A+'setup/site.webp',k:'w'},{src:A+'setup/templates.webp',k:'h'},{src:A+'setup/colors.webp',k:'h'},{src:A+'setup/ooh.webp',k:'w'},{src:A+'setup/bag.webp',k:'h'},{src:A+'setup/hoodie.webp',k:'h'}]},
- {id:'dom-ria',no:'05',color:'#e8862a',c2:'#ffb15a',year:'2020',
+
+ {id:'dom-ria',no:'09',color:'#e8862a',c2:'#ffb15a',year:'2020',
   title:{en:'DOM.RIA',uk:'DOM.RIA'},
   short:{en:'DOM.RIA',uk:'DOM.RIA'},
   client:{en:'DOM.RIA, real estate marketplace',uk:'DOM.RIA, маркетплейс нерухомості'},
@@ -485,7 +565,28 @@ var P=[
   did:{en:['Illustration and storyboard','Character animation','Two ad films: “Speed” and “Family”'],uk:['Ілюстрація та сторіборд','Анімація персонажів','Два рекламні ролики: «Швидкість» і «Сімʼя»']},
   res:[['2',{en:'ad films',uk:'рекламні ролики'}],['32s',{en:'“Speed”',uk:'«Швидкість»'}],['19s',{en:'“Family”',uk:'«Сімʼя»'}]],
   films:[{src:A+'ria/speed.mp4',poster:A+'ria/s2.webp',cap:{en:'“Speed”, 32 s',uk:'«Швидкість», 32 с'}},{src:A+'ria/family.mp4',poster:A+'ria/s4.webp',cap:{en:'“Family”, 19 s',uk:'«Сімʼя», 19 с'}}],
-  gal:[{src:A+'ria/cover.webp',k:'h'},{src:A+'ria/s1.webp',k:'h'}]}
+  gal:[{src:A+'ria/cover.webp',k:'h'},{src:A+'ria/s1.webp',k:'h'}]},
+
+ {id:'3d-motion',no:'10',color:'#2a0d33',c2:'#d8ff3a',year:'2020–23',
+  title:{en:'3D & Motion',uk:'3D та моушн'},
+  short:{en:'Studio lab',uk:'Лабораторія студії'},
+  client:{en:'OK Studio, own experiments and commercial pieces',uk:'OK Studio, власні експерименти та комерційні роботи'},
+  disc:{en:'3D, motion design',uk:'3D, моушн-дизайн'},
+  loop:A+'3d/l3.mp4',poster:A+'3d/l3.webp',
+  lead:{en:'Materials, physics and light: the 3D lab where we test textures and motion before they go into client work.',uk:'Матеріали, фізика й світло: 3D-лабораторія, де ми пробуємо текстури та рух, перш ніж вони потраплять у клієнтські проєкти.'},
+  did:{en:['3D model and animation for a crypto exchange promo','Soft-body and cloth simulations','Abstract loops for intros and backgrounds'],uk:['3D-модель та анімація для промо криптобіржі','Симуляції мʼяких тіл і тканини','Абстрактні лупи для заставок і фонів']},
+  galCols:3,
+  gal:[{src:A+'3d/model.mp4',poster:A+'3d/model.webp',k:'w',v:1},{src:A+'3d/l1.mp4',poster:A+'3d/l1.webp',k:'h',v:1},{src:A+'3d/l2.mp4',poster:A+'3d/l2.webp',k:'h',v:1},{src:A+'3d/l4.mp4',poster:A+'3d/l4.webp',k:'h',v:1},{src:A+'3d/l5.mp4',poster:A+'3d/l5.webp',k:'h',v:1},{src:A+'3d/l7.mp4',poster:A+'3d/l7.webp',k:'h',v:1},{src:A+'3d/l8.mp4',poster:A+'3d/l8.webp',k:'h',v:1}]},
+
+ {id:'arts',no:'11',color:'#3a1410',c2:'#e9473b',year:'2023–26',
+  title:{en:'Arts',uk:'Арт'},
+  short:{en:'Illustration',uk:'Ілюстрація'},
+  client:{en:'OK Studio, personal work',uk:'OK Studio, особисті роботи'},
+  disc:{en:'Illustration & posters',uk:'Ілюстрація та постери'},
+  loop:null,poster:A+'arts/orc.webp',img:A+'arts/orc.webp',
+  lead:{en:'Sketches, characters and posters: the hand-drawn side of the studio, from the first pencil line to the finished print.',uk:'Скетчі, персонажі й постери: мальована сторона студії, від першої лінії олівцем до готового принту.'},
+  galCols:3,
+  gal:[{src:A+'arts/orc.webp',k:'p'},{src:A+'arts/orcs.webp',k:'p'},{src:A+'arts/knight.webp',k:'p'},{src:A+'setup/phoenix.webp',k:'w'}]}
 ];
 
 var T={
@@ -500,7 +601,7 @@ var T={
  redPost:{en:'for organisations and businesses that want to be noticed, understood and chosen.',uk:'для організацій і бізнесу, які хочуть, щоб їх помітили, зрозуміли й обрали.'},
  redFoot:{en:'Design · Film · AI',uk:'Дизайн · Відео · ШІ'},
  workH:{en:'Selected work',uk:'Обрані роботи'},
- workP:{en:'Campaigns, films and identities for civil society, energy and business. Numbers come from the real campaigns.',uk:'Кампанії, фільми й айдентика для громадського сектору, енергетики та бізнесу. Цифри з реальних кампаній.'},
+ workP:{en:'Campaigns, films and identities for civil society, international programmes, energy and business. Numbers come from the real campaigns.',uk:'Кампанії, фільми й айдентика для громадського сектору, міжнародних програм, енергетики та бізнесу. Цифри з реальних кампаній.'},
  cProject:{en:'Project',uk:'Проєкт'},cClient:{en:'Client',uk:'Клієнт'},cDisc:{en:'Discipline',uk:'Напрям'},cYear:{en:'Year',uk:'Рік'},
  studioL:{en:'(Studio)',uk:'(Студія)'},
  manifesto:{en:'We reveal the value of businesses and organisations so they get <em>noticed,</em> understood and chosen. From the first brief to the finished film, every stage is visible and approved.',uk:'Ми розкриваємо цінність бізнесів і організацій, щоб їх <em>помітили,</em> зрозуміли й обрали. Від першого брифу до готового фільму кожен етап видимий і погоджений.'},
@@ -538,6 +639,7 @@ function byId(id){for(var i=0;i<P.length;i++)if(P[i].id===id)return P[i];return 
 function $(s,r){return (r||document).querySelector(s)}
 function $$(s,r){return [].slice.call((r||document).querySelectorAll(s))}
 function media(p,cls){
+  if(p.img&&!p.loop)return '<img class="'+(cls||'')+'" src="'+p.img+'" alt="">';
   if(p.gen)return '<div class="gen-ua '+(cls||'')+'"><b>UA→EU</b></div>';
   return '<video class="'+(cls||'')+'" src="'+p.loop+'" poster="'+p.poster+'" muted loop playsinline autoplay preload="auto"></video>';
 }
@@ -558,6 +660,7 @@ function renderText(){
       '<span class="r-client">'+tx(p.short)+'</span><span class="r-disc">'+tx(p.disc)+'</span><span class="r-year">'+p.year+'</span>'+
       '<span class="r-thumb">'+(p.gen?'<div class="gen-ua"><b>UA→EU</b></div>':'<img src="'+p.poster+'" alt="" loading="lazy">')+'</span></a>';
   }).join('');
+  var wc=$('#workCount');if(wc)wc.textContent='('+(P.length<10?'0':'')+P.length+')';
   $$('[data-lang]').forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-lang')===lang))});
   if(current)renderCase(current,true);
 }
@@ -584,7 +687,7 @@ document.addEventListener('pointerover',function(e){
 
 /* ---------- preview ---------- */
 var pv=$('#pv');
-pv.innerHTML=P.map(function(p){return p.gen?'<div class="gen-ua" data-id="'+p.id+'"><b>UA→EU</b></div>':'<video data-id="'+p.id+'" src="'+p.loop+'" muted loop playsinline preload="metadata"></video>'}).join('');
+pv.innerHTML=P.map(function(p){return (p.img&&!p.loop)?'<img data-id="'+p.id+'" src="'+p.img+'" alt="">':p.gen?'<div class="gen-ua" data-id="'+p.id+'"><b>UA→EU</b></div>':'<video data-id="'+p.id+'" src="'+p.loop+'" muted loop playsinline preload="metadata"></video>'}).join('');
 var pvOn=false,px=mx,py=my,pr=0,pvId=null;
 function setPreview(id){
   pvId=id;
@@ -708,19 +811,20 @@ function renderCase(id,keep){
   var p=byId(id),i=P.indexOf(p),nx=P[(i+1)%P.length];
   var h='';
   h+='<section class="c-hero" style="--pc:'+p.color+'"><div class="c-media">'+media(p)+'</div><div class="c-shade"></div>'+
-     '<div class="c-head wrap"><p class="mono">'+p.no+' / 0'+P.length+' · '+tx(p.disc)+'</p><h1 class="c-title"><span class="ln"><span>'+tx(p.title)+'</span></span></h1></div></section>';
+     '<div class="c-head wrap"><p class="mono">'+p.no+' / '+(P.length<10?'0':'')+P.length+' · '+tx(p.disc)+'</p><h1 class="c-title"><span class="ln"><span>'+tx(p.title)+'</span></span></h1></div></section>';
   h+='<a class="c-back mono" href="#work" data-cursor="go">← '+T.back[lang]+'</a>';
   h+='<div class="wrap"><section class="c-intro"><p class="c-lead">'+tx(p.lead)+'</p><dl class="c-meta mono">'+
      '<div><dt>'+T.lClient[lang]+'</dt><dd>'+tx(p.client)+'</dd></div><div><dt>'+T.lYear[lang]+'</dt><dd>'+p.year+'</dd></div>'+
      (p.dur?'<div><dt>'+T.lDur[lang]+'</dt><dd>'+tx(p.dur)+'</dd></div>':'')+'<div><dt>'+T.lDisc[lang]+'</dt><dd>'+tx(p.disc)+'</dd></div></dl></section>';
-  h+='<section class="c-block"><h2 class="lbl mono">'+T.lChal[lang]+'</h2><div class="bd"><p class="c-text">'+tx(p.challenge)+'</p></div></section>';
-  h+='<section class="c-block"><h2 class="lbl mono">'+T.lDid[lang]+'</h2><div class="bd"><ol class="c-list">'+p.did[lang].map(function(d){return '<li>'+d+'</li>'}).join('')+'</ol></div></section></div>';
+  if(p.challenge)h+='<section class="c-block"><h2 class="lbl mono">'+T.lChal[lang]+'</h2><div class="bd"><p class="c-text">'+tx(p.challenge)+'</p></div></section>';
+  if(p.did)h+='<section class="c-block"><h2 class="lbl mono">'+T.lDid[lang]+'</h2><div class="bd"><ol class="c-list">'+p.did[lang].map(function(d){return '<li>'+d+'</li>'}).join('')+'</ol>'+(p.link?'<a class="c-link" href="'+p.link.url+'" target="_blank" rel="noopener" data-cursor="go">'+tx(p.link.label)+' <i>↗</i></a>':'')+'</div></section>';
+  h+='</div>';
   if(p.hard)h+='<section class="quote wrap"><p>“'+tx(p.hard)+'”</p><span class="mono">'+T.lHard[lang]+'</span></section>';
   h+='<div class="wrap">';
   if(p.res)h+='<section class="c-block" style="--pc2:'+p.c2+'"><h2 class="lbl mono">'+T.lRes[lang]+'</h2><div class="bd c-res">'+p.res.map(function(r){return '<div><b>'+r[0]+'</b><span>'+tx(r[1])+'</span></div>'}).join('')+'</div></section>';
-  if(p.films)h+='<section class="c-block"><h2 class="lbl mono">'+T.lFilms[lang]+'</h2><div class="bd films">'+p.films.map(function(f){return '<figure class="'+(f.wide?'wide':'')+'" data-cursor="play"><video src="'+f.src+'" poster="'+f.poster+'" controls playsinline preload="none"></video><figcaption class="mono">'+tx(f.cap)+'</figcaption></figure>'}).join('')+'</div></section>';
+  if(p.films)h+='<section class="c-block"><h2 class="lbl mono">'+T.lFilms[lang]+'</h2><div class="bd films'+(p.vert?' vert':'')+'">'+p.films.map(function(f){return '<figure class="'+(f.wide?'wide':'')+'" data-cursor="play"><video src="'+f.src+'" poster="'+f.poster+'" controls playsinline preload="none"></video><figcaption class="mono">'+tx(f.cap)+'</figcaption></figure>'}).join('')+'</div></section>';
   if(p.note)h+='<section class="c-block"><h2 class="lbl mono">'+T.lFilms[lang]+'</h2><div class="bd"><p class="c-note">'+tx(p.note)+'</p></div></section>';
-  if(p.gal)h+='<section class="c-block" style="border:0;padding-top:0"><h2 class="lbl mono">'+T.lGal[lang]+'</h2><div class="bd gal">'+p.gal.map(function(g){return '<figure class="'+g.k+'"><img src="'+g.src+'" alt="" loading="lazy"></figure>'}).join('')+'</div></section>';
+  if(p.gal)h+='<section class="c-block" style="border:0;padding-top:0"><h2 class="lbl mono">'+T.lGal[lang]+'</h2><div class="bd gal'+(p.galCols===3?' gal3':'')+'">'+p.gal.map(function(g){return '<figure class="'+g.k+'">'+(g.v?'<video src="'+g.src+'" poster="'+g.poster+'" muted loop playsinline autoplay preload="metadata"></video>':'<img src="'+g.src+'" alt="" loading="lazy">')+'</figure>'}).join('')+'</div></section>';
   h+='</div>';
   h+='<a class="next" href="#case-'+nx.id+'" data-id="'+nx.id+'" data-cursor="next"><div class="n-media">'+media(nx)+'</div><div class="wrap"><span class="mono" style="color:var(--mute)">'+T.lNext[lang]+' · '+nx.no+'</span><span class="n-title">'+tx(nx.title)+'</span></div></a>';
   caseEl.innerHTML=h;
