@@ -277,6 +277,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
 .gal figure.q img{aspect-ratio:1/1}
 .gal.gal3 figure.h img{aspect-ratio:16/9}
 .gal figure.p img{aspect-ratio:9/16}
+.gal figure.s img{aspect-ratio:4/5;object-position:50% 0;transition:object-position 6s cubic-bezier(.45,0,.2,1)}
+.gal figure.s:hover img{object-position:50% 100%}
+.gal figure.f{grid-column:1/-1}.gal figure.f img{aspect-ratio:auto;height:auto}
 .c-link{display:inline-flex;gap:.6rem;align-items:center;margin-top:1.8rem;padding:1rem 1.5rem;border-radius:99px;background:var(--ink);color:var(--bg);font:500 1rem var(--body);transition:background .3s,color .3s}
 .c-link:hover{background:var(--accent);color:#fff}
 .c-link i{font-style:normal}
@@ -485,7 +488,19 @@ var P=[
   films:[{src:A+'uaexport/film.mp4',poster:A+'uaexport/s1.webp',cap:{en:'UA export, presentation film',uk:'UA export, презентаційний фільм'},wide:true}],
   gal:[{src:A+'uaexport/s6.webp',k:'h'},{src:A+'uaexport/s17.webp',k:'h'},{src:A+'uaexport/s24.webp',k:'h'},{src:A+'uaexport/s30.webp',k:'h'},{src:A+'uaexport/s36.webp',k:'w'}]},
 
- {id:'lets-discuss',no:'04',color:'#3b2fd6',c2:'#3be3a8',year:'2023–24',
+ {id:'marketplace-nda',no:'04',color:'#0b3a7a',c2:'#00d26a',year:'2025',
+  title:{en:'Marketplace · NDA',uk:'Маркетплейс · NDA'},
+  short:{en:'E-commerce · UX/UI · NDA',uk:'E-commerce · UX/UI · NDA'},
+  client:{en:'Large online marketplace (under NDA)',uk:'Великий онлайн-маркетплейс (під NDA)'},
+  disc:{en:'UX/UI redesign & design system',uk:'UX/UI редизайн та дизайн-система'},
+  loop:null,poster:A+'nda/mobile.webp',img:A+'nda/mobile.webp',
+  lead:{en:'A full UX/UI redesign of an online marketplace with thousands of products, from the home page to checkout. The project is under NDA, so the brand is hidden and logos are blurred.',uk:'Повний UX/UI редизайн онлайн-маркетплейсу з тисячами товарів: від головної до оформлення замовлення. Проєкт під NDA, тому бренд прихований, а логотипи розмиті.'},
+  challenge:{en:'Thousands of SKUs with complex technical parameters. The customer has to find the right product in a few clicks and trust the store enough to pay right away.',uk:'Тисячі позицій зі складними технічними параметрами. Покупець має знайти потрібний товар за кілька кліків і довіритися магазину настільки, щоб одразу оплатити.'},
+  did:{en:['UX audit and new information architecture','Smart search and parameter filters','Home, catalog and product card','Cart, checkout and personal account flows','Comparison, wishlist and saved profiles','Design system: colour tokens, type scale, icons','Desktop and mobile versions'],uk:['UX-аудит і нова інформаційна архітектура','Розумний пошук і фільтри за параметрами','Головна, каталог і картка товару','Кошик, оформлення та особистий кабінет','Порівняння, обране та збережені профілі','Дизайн-система: колірні токени, типографіка, іконки','Десктоп і мобільна версії']},
+  res:[['9',{en:'key page templates',uk:'ключових шаблонів сторінок'}],['36',{en:'colour tokens in the system',uk:'колірних токенів у системі'}],['2',{en:'breakpoints: desktop & mobile',uk:'брейкпоінти: десктоп і мобайл'}]],
+  gal:[{src:A+'nda/home.webp',k:'s'},{src:A+'nda/catalog.webp',k:'s'},{src:A+'nda/product.webp',k:'h'},{src:A+'nda/cart.webp',k:'h'},{src:A+'nda/popup.webp',k:'w'},{src:A+'nda/colors.webp',k:'f'}]},
+
+ {id:'lets-discuss',no:'05',color:'#3b2fd6',c2:'#3be3a8',year:'2023–24',
   title:{en:'Let’s Discuss',uk:'Let’s Discuss'},
   short:{en:'SetUp · USAID / IREX',uk:'SetUp · USAID / IREX'},
   client:{en:'NGO SetUp, with support from USAID and IREX; partners: Institute of Debate Brazil and Namibia Debate Union',uk:'ГО «Сетап», за підтримки USAID та IREX; партнери: Institute of Debate Brazil та Namibia Debate Union'},
@@ -501,7 +516,7 @@ var P=[
   galCols:3,
   gal:['d1','d2','d3','d4','d6','d7','d11','d12','d13','d14','d15','d9'].map(function(n){return {src:A+'letsdiscuss/'+n+'.webp',k:'q'}}).concat([{src:A+'letsdiscuss/art1.webp',k:'w'}])},
 
- {id:'dialogue-plus',no:'05',color:'#0d3f8f',c2:'#ffd23f',year:'2022–23',
+ {id:'dialogue-plus',no:'06',color:'#0d3f8f',c2:'#ffd23f',year:'2022–23',
   title:{en:'Dialogue+',uk:'Діалог+'},
   short:{en:'SetUp · UNDP',uk:'SetUp · ПРООН'},
   client:{en:'NGO SetUp, within the UNDP programme “Moving Forward Together” with EU support',uk:'ГО «Сетап», у межах програми ПРООН «Прямуємо разом» за підтримки ЄС'},
@@ -515,7 +530,7 @@ var P=[
   galCols:3,
   gal:[{src:A+'undp/t1.webp',k:'q'},{src:A+'undp/t2.webp',k:'q'},{src:A+'undp/t3.webp',k:'q'},{src:A+'undp/e1.webp',k:'q'},{src:A+'undp/e2.webp',k:'q'},{src:A+'undp/t4.webp',k:'q'},{src:A+'undp/v33.webp',k:'w'}]},
 
- {id:'human-rights-plus',no:'06',color:'#3b2fd6',c2:'#ff6f4f',year:'2021',
+ {id:'human-rights-plus',no:'07',color:'#3b2fd6',c2:'#ff6f4f',year:'2021',
   title:{en:'Human Rights+',uk:'Human Rights+'},
   short:{en:'SetUp · Human Rights House',uk:'SetUp · Human Rights House'},
   client:{en:'NGO SetUp, with support from Human Rights House Foundation and the EU',uk:'ГО «Сетап», за підтримки Human Rights House Foundation та ЄС'},
@@ -529,7 +544,7 @@ var P=[
   galCols:3,
   gal:[{src:A+'hrplus/y1.webp',k:'w'},{src:A+'hrplus/h1.webp',k:'q'},{src:A+'hrplus/h3.webp',k:'q'},{src:A+'hrplus/h4.webp',k:'q'},{src:A+'hrplus/y2.webp',k:'h'},{src:A+'hrplus/y3.webp',k:'h'},{src:A+'hrplus/tour.webp',k:'q'},{src:A+'hrplus/tee.webp',k:'h'},{src:A+'hrplus/h5.webp',k:'h'}]},
 
- {id:'setup',no:'07',color:'#2b22a8',c2:'#3be3a8',year:'2021–24',
+ {id:'setup',no:'08',color:'#2b22a8',c2:'#3be3a8',year:'2021–24',
   title:{en:'SetUp',uk:'SetUp'},
   short:{en:'SetUp',uk:'SetUp'},
   client:{en:'SetUp, an education platform for debate and communication',uk:'SetUp, освітня платформа дебатів і комунікацій'},
@@ -541,7 +556,7 @@ var P=[
   films:[{src:A+'setup/film.mp4',poster:A+'setup/loop.webp',cap:{en:'SetUp brand film',uk:'Бренд-фільм SetUp'},wide:true}],
   gal:[{src:A+'setup/site.webp',k:'w'},{src:A+'setup/templates.webp',k:'h'},{src:A+'setup/colors.webp',k:'h'},{src:A+'setup/pres1.webp',k:'h'},{src:A+'setup/pres2.webp',k:'h'},{src:A+'setup/league.webp',k:'h'},{src:A+'setup/gmf1.webp',k:'h'},{src:A+'setup/ooh.webp',k:'w'},{src:A+'setup/phoenix.webp',k:'h'},{src:A+'setup/gmf2.webp',k:'h'},{src:A+'setup/bag.webp',k:'h'},{src:A+'setup/hoodie.webp',k:'h'}]},
 
- {id:'kness',no:'08',color:'#141a2c',c2:'#f5c32c',year:'2020',
+ {id:'kness',no:'09',color:'#141a2c',c2:'#f5c32c',year:'2020',
   title:{en:'KNESS Service',uk:'KNESS Service'},
   short:{en:'KNESS Service',uk:'KNESS Service'},
   client:{en:'KNESS Service, solar power plant operation and maintenance',uk:'KNESS Service, експлуатація та обслуговування сонячних електростанцій'},
@@ -554,7 +569,7 @@ var P=[
   films:[{src:A+'kness/film.mp4',poster:A+'kness/s1.webp',cap:{en:'Short version, 30 s',uk:'Коротка версія, 30 с'},wide:true}],
   gal:[{src:A+'kness/s2.webp',k:'h'},{src:A+'kness/s3.webp',k:'h'},{src:A+'kness/s4.webp',k:'h'},{src:A+'kness/s5.webp',k:'h'}]},
 
- {id:'dom-ria',no:'09',color:'#e8862a',c2:'#ffb15a',year:'2020',
+ {id:'dom-ria',no:'10',color:'#e8862a',c2:'#ffb15a',year:'2020',
   title:{en:'DOM.RIA',uk:'DOM.RIA'},
   short:{en:'DOM.RIA',uk:'DOM.RIA'},
   client:{en:'DOM.RIA, real estate marketplace',uk:'DOM.RIA, маркетплейс нерухомості'},
@@ -567,7 +582,7 @@ var P=[
   films:[{src:A+'ria/speed.mp4',poster:A+'ria/s2.webp',cap:{en:'“Speed”, 32 s',uk:'«Швидкість», 32 с'}},{src:A+'ria/family.mp4',poster:A+'ria/s4.webp',cap:{en:'“Family”, 19 s',uk:'«Сімʼя», 19 с'}}],
   gal:[{src:A+'ria/cover.webp',k:'h'},{src:A+'ria/s1.webp',k:'h'}]},
 
- {id:'3d-motion',no:'10',color:'#2a0d33',c2:'#d8ff3a',year:'2020–23',
+ {id:'3d-motion',no:'11',color:'#2a0d33',c2:'#d8ff3a',year:'2020–23',
   title:{en:'3D & Motion',uk:'3D та моушн'},
   short:{en:'Studio lab',uk:'Лабораторія студії'},
   client:{en:'OK Studio, own experiments and commercial pieces',uk:'OK Studio, власні експерименти та комерційні роботи'},
@@ -578,7 +593,7 @@ var P=[
   galCols:3,
   gal:[{src:A+'3d/model.mp4',poster:A+'3d/model.webp',k:'w',v:1},{src:A+'3d/l1.mp4',poster:A+'3d/l1.webp',k:'h',v:1},{src:A+'3d/l2.mp4',poster:A+'3d/l2.webp',k:'h',v:1},{src:A+'3d/l4.mp4',poster:A+'3d/l4.webp',k:'h',v:1},{src:A+'3d/l5.mp4',poster:A+'3d/l5.webp',k:'h',v:1},{src:A+'3d/l7.mp4',poster:A+'3d/l7.webp',k:'h',v:1},{src:A+'3d/l8.mp4',poster:A+'3d/l8.webp',k:'h',v:1}]},
 
- {id:'arts',no:'11',color:'#3a1410',c2:'#e9473b',year:'2023–26',
+ {id:'arts',no:'12',color:'#3a1410',c2:'#e9473b',year:'2023–26',
   title:{en:'Arts',uk:'Арт'},
   short:{en:'Illustration',uk:'Ілюстрація'},
   client:{en:'OK Studio, personal work',uk:'OK Studio, особисті роботи'},
