@@ -216,6 +216,12 @@ section.sec{padding:clamp(5rem,11vw,10rem) 0}
 .cta i{font-style:normal;transition:transform .4s var(--out)}
 .cta:hover i{transform:translateX(6px)}
 footer{border-top:1px solid var(--line);padding:1.6rem 0 2rem;color:var(--mute)}
+.socials{display:flex;flex-wrap:wrap;gap:2.5rem;margin-top:3.5rem;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase}
+.socials a{display:inline-flex;gap:.6rem;align-items:center;padding-bottom:.4rem;border-bottom:1px solid var(--line);transition:color .3s,border-color .3s}
+.socials a i{font-style:normal;transition:transform .3s}
+.socials a:hover{color:var(--accent);border-color:var(--accent)}
+.socials a:hover i{transform:translate(3px,-3px)}
+footer a:hover{color:var(--ink)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
 
 /* transition overlay */
@@ -431,9 +437,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
         <p data-i="ctP"></p>
         <a class="cta" href="https://okstudio.com.ua/contact/" data-cursor="go"><span data-i="ctB"></span><i>→</i></a>
       </div>
+      <div class="socials mono"><a href="https://www.instagram.com/okstudio.com.ua/" target="_blank" rel="noopener" data-cursor="go">Instagram <i>↗</i></a></div>
     </div>
   </section>
-  <footer><div class="wrap mono"><span>© OK Studio 2026</span><span data-i="foot"></span><a href="https://okstudio.com.ua/">okstudio.com.ua</a></div></footer>
+  <footer><div class="wrap mono"><span>© OK Studio 2026</span><span data-i="foot"></span><a href="https://www.instagram.com/okstudio.com.ua/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://okstudio.com.ua/">okstudio.com.ua</a></div></footer>
 </main>
 
 <main id="case" class="case" hidden></main>
