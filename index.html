@@ -254,6 +254,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
 .quote p{font:400 clamp(1.7rem,3.8vw,3.6rem)/1.12 var(--disp);letter-spacing:-.055em;max-width:26ch;margin:0 auto;text-wrap:balance}
 .quote span{display:block;margin-top:1.6rem;color:var(--mute)}
 .c-res{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.c-logos{display:flex;flex-wrap:wrap;align-items:center;gap:2.2rem 3.2rem}.c-logos img{width:auto;opacity:.82;transition:opacity .3s}.c-logos img:hover{opacity:1}
+.logos{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.logos span{display:grid;place-items:center;height:clamp(110px,11vw,160px);border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:0 1.4rem}
+.logos img{max-width:100%;width:auto;opacity:.6;transition:opacity .35s,transform .5s var(--out)}.logos span:hover img{opacity:1;transform:scale(1.05)}
+@media (max-width:800px){.logos{grid-template-columns:repeat(3,1fr)}.logos img{transform:scale(.72)}}
 .c-res b{display:block;font:400 clamp(2.8rem,6.4vw,5.8rem)/.95 var(--disp);letter-spacing:-.07em;color:var(--pc2,var(--ink))}
 .c-res span{display:block;margin-top:.6rem;color:var(--mute);max-width:22ch}
 .films{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
@@ -413,6 +418,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
     </div>
   </section>
 
+  <section class="sec" id="partners" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-top"><h2 data-i="ptH"></h2><p data-i="ptP"></p></div>
+      <div class="logos"><span><img src="assets/partners/usaid.png" alt="" loading="lazy" style="height:43px"></span><span><img src="assets/partners/undp.png" alt="" loading="lazy" style="height:72px"></span><span><img src="assets/partners/eu_mft.png" alt="" loading="lazy" style="height:72px"></span><span><img src="assets/partners/ukid.png" alt="" loading="lazy" style="height:41px"></span><span><img src="assets/partners/canada.png" alt="" loading="lazy" style="height:46px"></span><span><img src="assets/partners/nl.png" alt="" loading="lazy" style="height:51px"></span><span><img src="assets/partners/irex.png" alt="" loading="lazy" style="height:50px"></span><span><img src="assets/partners/hoe.png" alt="" loading="lazy" style="height:62px"></span><span><img src="assets/partners/uwf.png" alt="" loading="lazy" style="height:55px"></span><span><img src="assets/partners/hrhf.png" alt="" loading="lazy" style="height:50px"></span><span><img src="assets/partners/gov_gender.png" alt="" loading="lazy" style="height:43px"></span><span><img src="assets/partners/dsmp.png" alt="" loading="lazy" style="height:39px"></span><span><img src="assets/partners/domria.png" alt="" loading="lazy" style="height:43px"></span><span><img src="assets/partners/kness.png" alt="" loading="lazy" style="height:38px"></span><span><img src="assets/partners/setup.png" alt="" loading="lazy" style="height:40px"></span></div>
+    </div>
+  </section>
+
   <section class="sec" id="services" style="padding-top:0">
     <div class="wrap">
       <div class="sec-top"><h2 data-i="svcH"></h2><p data-i="svcP"></p></div>
@@ -462,6 +474,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
 (function(){
 "use strict";
 var A='assets/';
+var LOGOH={"dsmp": 39, "eu_mft": 72, "domria": 43, "hrhf": 50, "undp": 72, "uwf": 55, "usaid": 43, "setup": 40, "nl": 51, "hoe": 62, "ukid": 41, "gov_gender": 43, "canada": 46, "kness": 38, "irex": 50};
 var P=[
  {id:'1325',no:'01',color:'#2a1712',c2:'#ff8a3d',year:'2025',
   title:{en:'Women. Peace. Security',uk:'Жінки. Мир. Безпека'},
@@ -475,7 +488,8 @@ var P=[
   hard:{en:'Showing small wins as the foundation of something bigger, and weaving the video into the design itself.',uk:'Показати маленькі перемоги як фундамент чогось більшого й вплести відео в сам дизайн.'},
   res:[['8',{en:'videos',uk:'відео'}],['200k',{en:'people reached',uk:'охоплення'}],['4',{en:'communities',uk:'громади'}]],
   films:[['cavemen',{en:'Cavemen',uk:'Печерні люди'}],['neighbors',{en:'Neighbours',uk:'Сусіди'}],['sofa',{en:'Sofa',uk:'Диван'}],['dreams',{en:'Dreams',uk:'Мрії'}],['fire',{en:'Fire',uk:'Вогонь'}]].map(function(f){return {src:A+'1325/'+f[0]+'.mp4',poster:A+'1325/p-'+f[0]+'.webp',cap:f[1]}}),
-  gal:[{src:A+'1325/cover.webp',k:'h'},{src:A+'1325/hero.webp',k:'h'}]},
+  gal:[{src:A+'1325/cover.webp',k:'h'},{src:A+'1325/hero.webp',k:'h'}],
+  partners:['eu_mft','uwf']},
 
  {id:'1325-strengthens',no:'02',color:'#1f6b45',c2:'#f26b4f',year:'2025',
   title:{en:'1325 Strengthens the Country',uk:'1325 зміцнює країну'},
@@ -489,7 +503,8 @@ var P=[
   res:[['8',{en:'vertical videos',uk:'вертикальних відео'}],['5',{en:'animated explainers',uk:'анімаційних пояснень'}],['3',{en:'community stories',uk:'історії громад'}]],
   vert:true,
   films:[['pillars',{en:'Three pillars of a safe community',uk:'Три кити безпечної громади'}],['steps',{en:'4 steps to a local plan',uk:'4 кроки до місцевого плану'}],['defence',{en:'Women in the security sector',uk:'Жінки в секторі безпеки'}],['economy',{en:'Economic resilience',uk:'Економічна стійкість'}],['care',{en:'Where to get help',uk:'Куди звертатися по допомогу'}],['desna',{en:'Safe Desna',uk:'Безпечна Десна'}],['horodkivka',{en:'Horodkivka: from cameras to trust',uk:'Городківка: від камер до довіри'}],['participation',{en:'Where women create change',uk:'Місце, де жінки творять зміни'}]].map(function(f){return {src:A+'1325b/'+f[0]+'.mp4',poster:A+'1325b/'+f[0]+'.webp',cap:f[1]}}),
-  gal:[{src:A+'1325b/bb_spread.webp',k:'f'},{src:A+'1325b/bb_palette.webp',k:'f'},{src:A+'1325b/bb_pages.webp',k:'f'}]},
+  gal:[{src:A+'1325b/bb_spread.webp',k:'f'},{src:A+'1325b/bb_palette.webp',k:'f'},{src:A+'1325b/bb_pages.webp',k:'f'}],
+  partners:['ukid','canada','nl','gov_gender','uwf']},
 
  {id:'ua-export',no:'03',color:'#1d4fd1',c2:'#ffd23f',year:'2024',
   title:{en:'UA export',uk:'UA export'},
@@ -531,7 +546,8 @@ var P=[
   vert:true,
   films:[{src:A+'letsdiscuss/film1.mp4',poster:A+'letsdiscuss/film1.webp',cap:{en:'Participants on the project, part 1',uk:'Учасники про проєкт, частина 1'}},{src:A+'letsdiscuss/film2.mp4',poster:A+'letsdiscuss/film2.webp',cap:{en:'Participants on the project, part 2',uk:'Учасники про проєкт, частина 2'}}],
   galCols:3,
-  gal:['d1','d2','d3','d4','d11','d15'].map(function(n){return {src:A+'letsdiscuss/'+n+'.webp',k:'q'}})},
+  gal:['d1','d2','d3','d4','d11','d15'].map(function(n){return {src:A+'letsdiscuss/'+n+'.webp',k:'q'}}),
+  partners:['usaid','irex','setup']},
 
  {id:'dialogue-plus',no:'06',color:'#0d3f8f',c2:'#ffd23f',year:'2022–23',
   title:{en:'Dialogue+',uk:'Діалог+'},
@@ -545,7 +561,8 @@ var P=[
   res:[['58k',{en:'video views in the ad campaign',uk:'переглядів ролика в рекламній кампанії'}],['118',{en:'forum participants',uk:'учасників форуму'}],['15',{en:'organisations at the forum',uk:'організацій на форумі'}]],
   films:[{src:A+'undp/promo.mp4',poster:A+'undp/promo.webp',cap:{en:'Promo video, UNDP × EU',uk:'Промо-ролик, ПРООН × ЄС'}}],
   galCols:3,
-  gal:[{src:A+'undp/t1.webp',k:'q'},{src:A+'undp/t2.webp',k:'q'},{src:A+'undp/t3.webp',k:'q'},{src:A+'undp/e1.webp',k:'q'},{src:A+'undp/e2.webp',k:'q'},{src:A+'undp/t4.webp',k:'q'}]},
+  gal:[{src:A+'undp/t1.webp',k:'q'},{src:A+'undp/t2.webp',k:'q'},{src:A+'undp/t3.webp',k:'q'},{src:A+'undp/e1.webp',k:'q'},{src:A+'undp/e2.webp',k:'q'},{src:A+'undp/t4.webp',k:'q'}],
+  partners:['undp','eu_mft','setup']},
 
  {id:'human-rights-plus',no:'07',color:'#3b2fd6',c2:'#ff6f4f',year:'2021',
   title:{en:'Human Rights+',uk:'Human Rights+'},
@@ -559,7 +576,8 @@ var P=[
   res:[['10',{en:'video lessons',uk:'відеоуроків'}],['3',{en:'speakers',uk:'спікери'}],['2',{en:'weeks online',uk:'тижні онлайн'}]],
   link:{url:'https://www.youtube.com/watch?v=ATiO46T1zxY&list=PLak942P4eDoB5ayEItFp2XKE7YrcminIa',label:{en:'Watch the course on YouTube',uk:'Дивитися курс на YouTube'}},
   galCols:3,
-  gal:[{src:A+'hrplus/y1.webp',k:'w'},{src:A+'hrplus/h1.webp',k:'q'},{src:A+'hrplus/h3.webp',k:'q'},{src:A+'hrplus/h4.webp',k:'q'},{src:A+'hrplus/y2.webp',k:'h'},{src:A+'hrplus/y3.webp',k:'h'},{src:A+'hrplus/tour.webp',k:'q'},{src:A+'hrplus/tee.webp',k:'h'},{src:A+'hrplus/h5.webp',k:'h'}]},
+  gal:[{src:A+'hrplus/y1.webp',k:'w'},{src:A+'hrplus/h1.webp',k:'q'},{src:A+'hrplus/h3.webp',k:'q'},{src:A+'hrplus/h4.webp',k:'q'},{src:A+'hrplus/y2.webp',k:'h'},{src:A+'hrplus/y3.webp',k:'h'},{src:A+'hrplus/tour.webp',k:'q'},{src:A+'hrplus/tee.webp',k:'h'},{src:A+'hrplus/h5.webp',k:'h'}],
+  partners:['hrhf','setup']},
 
  {id:'setup',no:'08',color:'#2b22a8',c2:'#3be3a8',year:'2021–24',
   title:{en:'SetUp',uk:'SetUp'},
@@ -571,7 +589,8 @@ var P=[
   challenge:{en:'Courses, tournaments, merch and partner projects needed one recognisable visual language that the team could use without a designer.',uk:'Курсам, турнірам, мерчу та партнерським проєктам потрібна була одна впізнавана візуальна мова, якою команда може користуватись без дизайнера.'},
   did:{en:['Logo and brandbook','Collage brand film','Social media templates and stories','Presentations for debate courses','Visuals for tournaments and partner programmes (GMF, Phoenix Cup)','Outdoor, merch and website design'],uk:['Логотип і брендбук','Колажний бренд-фільм','Шаблони для соцмереж і сторіз','Презентації для курсів дебатів','Візуали для турнірів і партнерських програм (GMF, Phoenix Cup)','Зовнішня реклама, мерч і дизайн сайту']},
   films:[{src:A+'setup/film.mp4',poster:A+'setup/loop.webp',cap:{en:'SetUp brand film',uk:'Бренд-фільм SetUp'},wide:true}],
-  gal:[{src:A+'setup/site.webp',k:'w'},{src:A+'setup/colors.webp',k:'w'},{src:A+'setup/league.webp',k:'q'},{src:A+'setup/hoodie.webp',k:'q'},{src:A+'setup/ooh.webp',k:'w'},{src:A+'setup/bag.webp',k:'w'}]},
+  gal:[{src:A+'setup/site.webp',k:'w'},{src:A+'setup/colors.webp',k:'w'},{src:A+'setup/league.webp',k:'q'},{src:A+'setup/hoodie.webp',k:'q'},{src:A+'setup/ooh.webp',k:'w'},{src:A+'setup/bag.webp',k:'w'}],
+  partners:['setup','hoe','dsmp']},
 
  {id:'kness',no:'09',color:'#141a2c',c2:'#f5c32c',year:'2020',
   title:{en:'KNESS Service',uk:'KNESS Service'},
@@ -584,7 +603,8 @@ var P=[
   did:{en:['On-site and drone filming','Motion graphics for each service','Main film, a Facebook cut and 30-second UA and EN versions'],uk:['Зйомки на обʼєктах і з дрона','Моушн-графіка для кожної послуги','Основний фільм, версія для Facebook і 30-секундні версії UA та EN']},
   res:[['4',{en:'films',uk:'ролики'}],['2',{en:'languages, UA and EN',uk:'мови, UA та EN'}],['83s',{en:'main service film',uk:'основний сервісний фільм'}]],
   films:[{src:A+'kness/main.mp4',poster:A+'kness/m4_5.webp',cap:{en:'Service film, 83 s',uk:'Сервісний фільм, 83 с'},wide:true},{src:A+'kness/fb.mp4',poster:A+'kness/f5_5.webp',cap:{en:'Brand film “The future powers”, 44 s',uk:'Імідж-ролик «Майбутнє живить», 44 с'}},{src:A+'kness/short.mp4',poster:A+'kness/m26_5.webp',cap:{en:'Short version EN, 30 s',uk:'Коротка версія EN, 30 с'}}],
-  gal:[{src:A+'kness/lt1.mp4',poster:A+'kness/lt1.webp',k:'h',v:1},{src:A+'kness/lt4.mp4',poster:A+'kness/lt4.webp',k:'h',v:1},{src:A+'kness/lt2.mp4',poster:A+'kness/lt2.webp',k:'h',v:1},{src:A+'kness/lt6.mp4',poster:A+'kness/lt6.webp',k:'h',v:1},{src:A+'kness/lt3.mp4',poster:A+'kness/lt3.webp',k:'h',v:1},{src:A+'kness/lt5.mp4',poster:A+'kness/lt5.webp',k:'h',v:1}]},
+  gal:[{src:A+'kness/lt1.mp4',poster:A+'kness/lt1.webp',k:'h',v:1},{src:A+'kness/lt4.mp4',poster:A+'kness/lt4.webp',k:'h',v:1},{src:A+'kness/lt2.mp4',poster:A+'kness/lt2.webp',k:'h',v:1},{src:A+'kness/lt6.mp4',poster:A+'kness/lt6.webp',k:'h',v:1},{src:A+'kness/lt3.mp4',poster:A+'kness/lt3.webp',k:'h',v:1},{src:A+'kness/lt5.mp4',poster:A+'kness/lt5.webp',k:'h',v:1}],
+  partners:['kness']},
 
  {id:'dom-ria',no:'10',color:'#e8862a',c2:'#ffb15a',year:'2020',
   title:{en:'DOM.RIA',uk:'DOM.RIA'},
@@ -594,10 +614,11 @@ var P=[
   loop:A+'ria/loop.mp4',poster:A+'ria/loop.webp',
   lead:{en:'Hand-drawn animated ads about finding a verified apartment without the stress.',uk:'Мальовані анімаційні ролики про те, як знайти перевірену квартиру без стресу.'},
   challenge:{en:'Show a long search for a home, and the moment it becomes easy, in under half a minute.',uk:'Показати довгий пошук житла й момент, коли він стає простим, менш ніж за пів хвилини.'},
-  did:{en:['Illustration, characters and storyboard','Character animation','Three ad films: “Speed”, “Family” and “New builds”'],uk:['Ілюстрація, персонажі та сторіборд','Анімація персонажів','Три рекламні ролики: «Швидкість», «Сімʼя» і «Новобудови»']},
-  res:[['3',{en:'ad films',uk:'рекламні ролики'}],['18',{en:'illustrated artboards',uk:'ілюстрованих артбордів'}],['67s',{en:'of hand-drawn animation',uk:'мальованої анімації'}]],
+  did:{en:['Illustration, characters and storyboard','Character animation','Eight ad films, including “Speed”, “Family” and “New builds”'],uk:['Ілюстрація, персонажі та сторіборд','Анімація персонажів','Вісім рекламних роликів, серед них «Швидкість», «Сімʼя» і «Новобудови»']},
+  res:[['8',{en:'ad films',uk:'рекламних роликів'}],['18',{en:'illustrated artboards',uk:'ілюстрованих артбордів'}],['2',{en:'characters and scenes in one line style',uk:'лінійний стиль для персонажів і сцен'}]],
   films:[{src:A+'ria/speed.mp4',poster:A+'ria/s2.webp',cap:{en:'“Speed”, 32 s',uk:'«Швидкість», 32 с'},wide:true},{src:A+'ria/family.mp4',poster:A+'ria/s4.webp',cap:{en:'“Family”, 19 s',uk:'«Сімʼя», 19 с'}},{src:A+'ria/full.mp4',poster:A+'ria/full.webp',cap:{en:'“New builds”, 16 s',uk:'«Новобудови», 16 с'}}],
-  gal:[{src:A+'ria/chars.webp',k:'f'},{src:A+'ria/scenes.webp',k:'f'},{src:A+'ria/style.webp',k:'f'},{src:A+'ria/cover.webp',k:'h'},{src:A+'ria/s1.webp',k:'h'}]},
+  gal:[{src:A+'ria/chars.webp',k:'f'},{src:A+'ria/scenes.webp',k:'f'},{src:A+'ria/style.webp',k:'f'},{src:A+'ria/s1.webp',k:'f'}],
+  partners:['domria']},
 
  {id:'3d-motion',no:'11',color:'#2a0d33',c2:'#d8ff3a',year:'2020–23',
   title:{en:'3D & Motion',uk:'3D та моушн'},
@@ -659,7 +680,7 @@ var T={
  foot:{en:'Based in USA / Ukraine',uk:'Based in USA / Ukraine'},
  view:{en:'View',uk:'Дивитись'},play:{en:'Play',uk:'Грати'},next:{en:'Next',uk:'Далі'},go:{en:'Go',uk:'Вперед'},
  back:{en:'All work',uk:'Усі роботи'},lClient:{en:'Client',uk:'Клієнт'},lYear:{en:'Year',uk:'Рік'},lDur:{en:'Duration',uk:'Тривалість'},lDisc:{en:'Discipline',uk:'Напрям'},
- lChal:{en:'(Challenge)',uk:'(Виклик)'},lDid:{en:'(What we did)',uk:'(Що ми зробили)'},lHard:{en:'The hardest part',uk:'Найскладніше'},lRes:{en:'(Results)',uk:'(Результати)'},lFilms:{en:'(Films)',uk:'(Відео)'},lGal:{en:'(Frames)',uk:'(Кадри)'},lNext:{en:'Next project',uk:'Наступний проєкт'}
+ lChal:{en:'(Challenge)',uk:'(Виклик)'},lDid:{en:'(What we did)',uk:'(Що ми зробили)'},lHard:{en:'The hardest part',uk:'Найскладніше'},lRes:{en:'(Results)',uk:'(Результати)'},lFilms:{en:'(Films)',uk:'(Відео)'},lGal:{en:'(Frames)',uk:'(Кадри)'},lNext:{en:'Next project',uk:'Наступний проєкт'},lPart:{en:'(Partners)',uk:'(Партнери)'},ptH:{en:'Partners & clients',uk:'Партнери та клієнти'},ptP:{en:'International donors, public institutions and businesses we have made work for.',uk:'Міжнародні донори, державні інституції та бізнес, для яких ми працювали.'}
 };
 
 var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -854,6 +875,7 @@ function renderCase(id,keep){
   if(p.hard)h+='<section class="quote wrap"><p>“'+tx(p.hard)+'”</p><span class="mono">'+T.lHard[lang]+'</span></section>';
   h+='<div class="wrap">';
   if(p.res)h+='<section class="c-block" style="--pc2:'+p.c2+'"><h2 class="lbl mono">'+T.lRes[lang]+'</h2><div class="bd c-res">'+p.res.map(function(r){return '<div><b>'+r[0]+'</b><span>'+tx(r[1])+'</span></div>'}).join('')+'</div></section>';
+  if(p.partners)h+='<section class="c-block"><h2 class="lbl mono">'+T.lPart[lang]+'</h2><div class="bd c-logos">'+p.partners.map(function(n){return '<img src="assets/partners/'+n+'.png" alt="" loading="lazy" style="height:'+(LOGOH[n]||40)+'px">'}).join('')+'</div></section>';
   if(p.films)h+='<section class="c-block"><h2 class="lbl mono">'+T.lFilms[lang]+'</h2><div class="bd films'+(p.vert?' vert':'')+'">'+p.films.map(function(f){return '<figure class="'+(f.wide?'wide':'')+'" data-cursor="play"><video src="'+f.src+'" poster="'+f.poster+'" controls playsinline preload="none"></video><figcaption class="mono">'+tx(f.cap)+'</figcaption></figure>'}).join('')+'</div></section>';
   if(p.note)h+='<section class="c-block"><h2 class="lbl mono">'+T.lFilms[lang]+'</h2><div class="bd"><p class="c-note">'+tx(p.note)+'</p></div></section>';
   if(p.gal)h+='<section class="c-block" style="border:0;padding-top:0"><h2 class="lbl mono">'+T.lGal[lang]+'</h2><div class="bd gal'+(p.galCols===3?' gal3':'')+'">'+p.gal.map(function(g){return '<figure class="'+g.k+'"'+(g.d?' style="--d:'+g.d+'s"':'')+'>'+(g.v?'<video src="'+g.src+'" poster="'+g.poster+'" muted loop playsinline autoplay preload="metadata"></video>':'<img src="'+g.src+'" alt="" loading="lazy">')+(g.cap?'<figcaption class="mono">'+tx(g.cap)+'</figcaption>':'')+'</figure>'}).join('')+'</div></section>';
