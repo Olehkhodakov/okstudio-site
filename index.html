@@ -282,10 +282,19 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
 .gal figure.w video,.gal figure.h video{aspect-ratio:16/9}
 .gal figure.q img{aspect-ratio:1/1}
 .gal.gal3 figure.h img{aspect-ratio:16/9}
+.gal figure.n img{aspect-ratio:16/9}
 .gal figure.p img{aspect-ratio:9/16}
 .gal figure.s img{aspect-ratio:4/5;object-position:50% 0;transition:object-position 6s cubic-bezier(.45,0,.2,1)}
 .gal figure.s:hover img{object-position:50% 100%}
 .gal figure.f{grid-column:1/-1}.gal figure.f img{aspect-ratio:auto;height:auto}
+.gal figure.b{grid-column:1/-1;position:relative;border-radius:14px;overflow:hidden;background:#fff;padding-top:38px;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.gal figure.b:before{content:'';position:absolute;left:0;right:0;top:0;height:38px;background:radial-gradient(circle,#ff5f57 5px,transparent 6px) 12px 50%/22px 22px no-repeat,radial-gradient(circle,#febc2e 5px,transparent 6px) 34px 50%/22px 22px no-repeat,radial-gradient(circle,#28c840 5px,transparent 6px) 56px 50%/22px 22px no-repeat,#eceef1}
+.gal figure.b:after{content:'';position:absolute;top:9px;left:50%;transform:translateX(-50%);width:34%;height:20px;border-radius:6px;background:#fff}
+.gal figure.b img{aspect-ratio:16/10;object-fit:cover;object-position:50% 0;border-radius:0;animation:bsc var(--d,24s) cubic-bezier(.65,0,.35,1) infinite alternate}
+.gal figure.b:hover img{animation-play-state:paused}
+@keyframes bsc{0%,7%{object-position:50% 0}93%,100%{object-position:50% 100%}}
+.gal figure figcaption{margin-top:.8rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.gal figure.b figcaption{position:absolute;right:14px;top:11px;margin:0;color:#6b7280;font-size:.62rem}
 .c-link{display:inline-flex;gap:.6rem;align-items:center;margin-top:1.8rem;padding:1rem 1.5rem;border-radius:99px;background:var(--ink);color:var(--bg);font:500 1rem var(--body);transition:background .3s,color .3s}
 .c-link:hover{background:var(--accent);color:#fff}
 .c-link i{font-style:normal}
@@ -350,7 +359,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
     <a href="#contact" data-nav data-i="nContact">Contact</a>
   </nav>
   <div class="right">
-    <span class="clock" id="clock">Vinnytsia</span>
+    <span class="clock" id="clock">USA / Ukraine</span>
     <div class="lang" role="group" aria-label="Language">
       <button type="button" data-lang="en" aria-pressed="true">EN</button>
       <button type="button" data-lang="uk" aria-pressed="false">UA</button>
@@ -479,7 +488,8 @@ var P=[
   did:{en:['Scripts and voice-over for every video','5 animated explainers: three pillars of a safe community, 4 steps to a local plan, women in the security sector, economic resilience, where to get help','3 documentary stories filmed in Desna, Horodkivka and other communities','Motion design in the campaign’s visual system, vertical format for Reels, Shorts and TikTok'],uk:['Сценарії та озвучка для кожного відео','5 анімаційних пояснень: три кити безпечної громади, 4 кроки до місцевого плану, жінки в секторі безпеки, економічна стійкість, куди звертатися по допомогу','3 документальні історії, зняті в Десні, Городківці та інших громадах','Моушн-дизайн у візуальній системі кампанії, вертикальний формат для Reels, Shorts і TikTok']},
   res:[['8',{en:'vertical videos',uk:'вертикальних відео'}],['5',{en:'animated explainers',uk:'анімаційних пояснень'}],['3',{en:'community stories',uk:'історії громад'}]],
   vert:true,
-  films:[['pillars',{en:'Three pillars of a safe community',uk:'Три кити безпечної громади'}],['steps',{en:'4 steps to a local plan',uk:'4 кроки до місцевого плану'}],['defence',{en:'Women in the security sector',uk:'Жінки в секторі безпеки'}],['economy',{en:'Economic resilience',uk:'Економічна стійкість'}],['care',{en:'Where to get help',uk:'Куди звертатися по допомогу'}],['desna',{en:'Safe Desna',uk:'Безпечна Десна'}],['horodkivka',{en:'Horodkivka: from cameras to trust',uk:'Городківка: від камер до довіри'}],['participation',{en:'Where women create change',uk:'Місце, де жінки творять зміни'}]].map(function(f){return {src:A+'1325b/'+f[0]+'.mp4',poster:A+'1325b/'+f[0]+'.webp',cap:f[1]}})},
+  films:[['pillars',{en:'Three pillars of a safe community',uk:'Три кити безпечної громади'}],['steps',{en:'4 steps to a local plan',uk:'4 кроки до місцевого плану'}],['defence',{en:'Women in the security sector',uk:'Жінки в секторі безпеки'}],['economy',{en:'Economic resilience',uk:'Економічна стійкість'}],['care',{en:'Where to get help',uk:'Куди звертатися по допомогу'}],['desna',{en:'Safe Desna',uk:'Безпечна Десна'}],['horodkivka',{en:'Horodkivka: from cameras to trust',uk:'Городківка: від камер до довіри'}],['participation',{en:'Where women create change',uk:'Місце, де жінки творять зміни'}]].map(function(f){return {src:A+'1325b/'+f[0]+'.mp4',poster:A+'1325b/'+f[0]+'.webp',cap:f[1]}}),
+  gal:[{src:A+'1325b/bb_spread.webp',k:'f'},{src:A+'1325b/bb_palette.webp',k:'f'},{src:A+'1325b/bb_pages.webp',k:'f'}]},
 
  {id:'ua-export',no:'03',color:'#1d4fd1',c2:'#ffd23f',year:'2024',
   title:{en:'UA export',uk:'UA export'},
@@ -488,24 +498,24 @@ var P=[
   disc:{en:'Presentation films',uk:'Презентаційні відео'},dur:{en:'6 months',uk:'6 місяців'},
   loop:A+'uaexport/loop.mp4',poster:A+'uaexport/loop.webp',
   lead:{en:'Presentation films that bring regional Ukrainian manufacturers in front of European partners.',uk:'Презентаційні фільми, що виводять регіональних українських виробників до європейських партнерів.'},
-  challenge:{en:'Medium and large businesses in Ukrainian communities rarely have strong presentation materials. That slows their growth and keeps them invisible on other markets.',uk:'Великий і середній бізнес у громадах далеко не завжди має якісні представницькі матеріали. Це гальмує масштабування й присутність на інших ринках.'},
+  challenge:{en:'Businesses in Ukrainian communities rarely have strong presentation materials. That slows their growth and keeps them invisible on other markets.',uk:'Бізнес у громадах далеко не завжди має якісні представницькі матеріали. Це гальмує масштабування й присутність на інших ринках.'},
   did:{en:['Filming at 8 enterprises','A film for each company','Versions for distribution in Europe'],uk:['Зйомки на 8 підприємствах','Фільм для кожної компанії','Версії для поширення в Європі']},
   hard:{en:'Some of the plants were worn. We built every film on close details, so we never needed the wide shot.',uk:'Деякі підприємства були трохи занедбані. Ми будували кожен фільм на деталях, щоб не брати загальний план.'},
   res:[['8',{en:'films',uk:'відео'}],['100k',{en:'views in Europe',uk:'охоплення в Європі'}],['3',{en:'companies found European partners',uk:'підприємства знайшли партнерів у Європі'}]],
   films:[{src:A+'uaexport/film.mp4',poster:A+'uaexport/s1.webp',cap:{en:'UA export, presentation film',uk:'UA export, презентаційний фільм'},wide:true}],
-  gal:[{src:A+'uaexport/s6.webp',k:'h'},{src:A+'uaexport/s17.webp',k:'h'},{src:A+'uaexport/s24.webp',k:'h'},{src:A+'uaexport/s30.webp',k:'h'},{src:A+'uaexport/s36.webp',k:'w'}]},
+  gal:[{src:A+'uaexport/kit.webp',k:'f'},{src:A+'uaexport/l1.mp4',poster:A+'uaexport/l1.webp',k:'h',v:1},{src:A+'uaexport/l2.mp4',poster:A+'uaexport/l2.webp',k:'h',v:1},{src:A+'uaexport/l3.mp4',poster:A+'uaexport/l3.webp',k:'h',v:1},{src:A+'uaexport/l4.mp4',poster:A+'uaexport/l4.webp',k:'h',v:1},{src:A+'uaexport/l6.mp4',poster:A+'uaexport/l6.webp',k:'h',v:1},{src:A+'uaexport/l5.mp4',poster:A+'uaexport/l5.webp',k:'h',v:1},{src:A+'uaexport/s24.webp',k:'n'},{src:A+'uaexport/s30.webp',k:'n'}]},
 
  {id:'marketplace-nda',no:'04',color:'#0b3a7a',c2:'#00d26a',year:'2025',
   title:{en:'Marketplace · NDA',uk:'Маркетплейс · NDA'},
   short:{en:'E-commerce · UX/UI · NDA',uk:'E-commerce · UX/UI · NDA'},
   client:{en:'Large online marketplace (under NDA)',uk:'Великий онлайн-маркетплейс (під NDA)'},
   disc:{en:'UX/UI redesign & design system',uk:'UX/UI редизайн та дизайн-система'},
-  loop:null,poster:A+'nda/mobile.webp',img:A+'nda/mobile.webp',
+  loop:null,poster:A+'nda2/cover.webp',img:A+'nda2/cover.webp',
   lead:{en:'A full UX/UI redesign of an online marketplace with thousands of products, from the home page to checkout. The project is under NDA, so the brand is hidden and logos are blurred.',uk:'Повний UX/UI редизайн онлайн-маркетплейсу з тисячами товарів: від головної до оформлення замовлення. Проєкт під NDA, тому бренд прихований, а логотипи розмиті.'},
   challenge:{en:'Thousands of SKUs with complex technical parameters. The customer has to find the right product in a few clicks and trust the store enough to pay right away.',uk:'Тисячі позицій зі складними технічними параметрами. Покупець має знайти потрібний товар за кілька кліків і довіритися магазину настільки, щоб одразу оплатити.'},
   did:{en:['UX audit and new information architecture','Smart search and parameter filters','Home, catalog and product card','Cart, checkout and personal account flows','Comparison, wishlist and saved profiles','Design system: colour tokens, type scale, icons','Desktop and mobile versions'],uk:['UX-аудит і нова інформаційна архітектура','Розумний пошук і фільтри за параметрами','Головна, каталог і картка товару','Кошик, оформлення та особистий кабінет','Порівняння, обране та збережені профілі','Дизайн-система: колірні токени, типографіка, іконки','Десктоп і мобільна версії']},
-  res:[['9',{en:'key page templates',uk:'ключових шаблонів сторінок'}],['36',{en:'colour tokens in the system',uk:'колірних токенів у системі'}],['2',{en:'breakpoints: desktop & mobile',uk:'брейкпоінти: десктоп і мобайл'}]],
-  gal:[{src:A+'nda/home.webp',k:'s'},{src:A+'nda/catalog.webp',k:'s'},{src:A+'nda/product.webp',k:'h'},{src:A+'nda/cart.webp',k:'h'},{src:A+'nda/popup.webp',k:'w'},{src:A+'nda/colors.webp',k:'f'}]},
+  res:[['9',{en:'key page templates',uk:'ключових шаблонів сторінок'}],['12',{en:'colour tokens and 26 icons in the kit',uk:'колірних токенів і 26 іконок у кіті'}],['2',{en:'breakpoints: desktop & mobile',uk:'брейкпоінти: десктоп і мобайл'}]],
+  gal:[{src:A+'nda2/home.webp',k:'b',d:30,cap:{en:'Home',uk:'Головна'}},{src:A+'nda2/catalog.webp',k:'b',d:24,cap:{en:'Catalogue',uk:'Каталог'}},{src:A+'nda2/product.webp',k:'b',d:24,cap:{en:'Product page',uk:'Картка товару'}},{src:A+'nda2/checkout.webp',k:'b',d:10,cap:{en:'Checkout',uk:'Оформлення'}},{src:A+'nda2/mobile.webp',k:'f'},{src:A+'nda2/process.webp',k:'f'},{src:A+'nda2/wirecmp.webp',k:'f'},{src:A+'nda2/kit1.webp',k:'f'},{src:A+'nda2/kit2.webp',k:'f'}]},
 
  {id:'lets-discuss',no:'05',color:'#3b2fd6',c2:'#3be3a8',year:'2023–24',
   title:{en:'Let’s Discuss',uk:'Let’s Discuss'},
@@ -573,8 +583,8 @@ var P=[
   challenge:{en:'Good maintenance is invisible. The film had to show the whole service: monitoring, diagnostics, thermal inspection and emergency response.',uk:'Якісне обслуговування непомітне. Фільм мав показати весь сервіс: моніторинг, діагностику, тепловізійне обстеження та екстрене реагування.'},
   did:{en:['On-site and drone filming','Motion graphics for each service','Main film, a Facebook cut and 30-second UA and EN versions'],uk:['Зйомки на обʼєктах і з дрона','Моушн-графіка для кожної послуги','Основний фільм, версія для Facebook і 30-секундні версії UA та EN']},
   res:[['4',{en:'films',uk:'ролики'}],['2',{en:'languages, UA and EN',uk:'мови, UA та EN'}],['83s',{en:'main service film',uk:'основний сервісний фільм'}]],
-  films:[{src:A+'kness/film.mp4',poster:A+'kness/s1.webp',cap:{en:'Short version, 30 s',uk:'Коротка версія, 30 с'},wide:true}],
-  gal:[{src:A+'kness/s2.webp',k:'h'},{src:A+'kness/s3.webp',k:'h'},{src:A+'kness/s4.webp',k:'h'},{src:A+'kness/s5.webp',k:'h'}]},
+  films:[{src:A+'kness/main.mp4',poster:A+'kness/m4_5.webp',cap:{en:'Service film, 83 s',uk:'Сервісний фільм, 83 с'},wide:true},{src:A+'kness/fb.mp4',poster:A+'kness/f5_5.webp',cap:{en:'Brand film “The future powers”, 44 s',uk:'Імідж-ролик «Майбутнє живить», 44 с'}},{src:A+'kness/short.mp4',poster:A+'kness/m26_5.webp',cap:{en:'Short version EN, 30 s',uk:'Коротка версія EN, 30 с'}}],
+  gal:[{src:A+'kness/kit.webp',k:'f'},{src:A+'kness/lt1.mp4',poster:A+'kness/lt1.webp',k:'h',v:1},{src:A+'kness/lt4.mp4',poster:A+'kness/lt4.webp',k:'h',v:1},{src:A+'kness/lt2.mp4',poster:A+'kness/lt2.webp',k:'h',v:1},{src:A+'kness/lt6.mp4',poster:A+'kness/lt6.webp',k:'h',v:1},{src:A+'kness/lt3.mp4',poster:A+'kness/lt3.webp',k:'h',v:1},{src:A+'kness/lt5.mp4',poster:A+'kness/lt5.webp',k:'h',v:1},{src:A+'kness/m34_5.webp',k:'n'},{src:A+'kness/f33_5.webp',k:'n'},{src:A+'kness/m52_5.webp',k:'n'},{src:A+'kness/f12_5.webp',k:'n'}]},
 
  {id:'dom-ria',no:'10',color:'#e8862a',c2:'#ffb15a',year:'2020',
   title:{en:'DOM.RIA',uk:'DOM.RIA'},
@@ -584,21 +594,21 @@ var P=[
   loop:A+'ria/loop.mp4',poster:A+'ria/loop.webp',
   lead:{en:'Hand-drawn animated ads about finding a verified apartment without the stress.',uk:'Мальовані анімаційні ролики про те, як знайти перевірену квартиру без стресу.'},
   challenge:{en:'Show a long search for a home, and the moment it becomes easy, in under half a minute.',uk:'Показати довгий пошук житла й момент, коли він стає простим, менш ніж за пів хвилини.'},
-  did:{en:['Illustration and storyboard','Character animation','Two ad films: “Speed” and “Family”'],uk:['Ілюстрація та сторіборд','Анімація персонажів','Два рекламні ролики: «Швидкість» і «Сімʼя»']},
-  res:[['2',{en:'ad films',uk:'рекламні ролики'}],['32s',{en:'“Speed”',uk:'«Швидкість»'}],['19s',{en:'“Family”',uk:'«Сімʼя»'}]],
-  films:[{src:A+'ria/speed.mp4',poster:A+'ria/s2.webp',cap:{en:'“Speed”, 32 s',uk:'«Швидкість», 32 с'}},{src:A+'ria/family.mp4',poster:A+'ria/s4.webp',cap:{en:'“Family”, 19 s',uk:'«Сімʼя», 19 с'}}],
-  gal:[{src:A+'ria/cover.webp',k:'h'},{src:A+'ria/s1.webp',k:'h'}]},
+  did:{en:['Illustration, characters and storyboard','Character animation','Three ad films: “Speed”, “Family” and “New builds”'],uk:['Ілюстрація, персонажі та сторіборд','Анімація персонажів','Три рекламні ролики: «Швидкість», «Сімʼя» і «Новобудови»']},
+  res:[['3',{en:'ad films',uk:'рекламні ролики'}],['18',{en:'illustrated artboards',uk:'ілюстрованих артбордів'}],['67s',{en:'of hand-drawn animation',uk:'мальованої анімації'}]],
+  films:[{src:A+'ria/speed.mp4',poster:A+'ria/s2.webp',cap:{en:'“Speed”, 32 s',uk:'«Швидкість», 32 с'},wide:true},{src:A+'ria/family.mp4',poster:A+'ria/s4.webp',cap:{en:'“Family”, 19 s',uk:'«Сімʼя», 19 с'}},{src:A+'ria/full.mp4',poster:A+'ria/full.webp',cap:{en:'“New builds”, 16 s',uk:'«Новобудови», 16 с'}}],
+  gal:[{src:A+'ria/chars.webp',k:'f'},{src:A+'ria/scenes.webp',k:'f'},{src:A+'ria/style.webp',k:'f'},{src:A+'ria/cover.webp',k:'h'},{src:A+'ria/s1.webp',k:'h'}]},
 
  {id:'3d-motion',no:'11',color:'#2a0d33',c2:'#d8ff3a',year:'2020–23',
   title:{en:'3D & Motion',uk:'3D та моушн'},
   short:{en:'Studio lab',uk:'Лабораторія студії'},
   client:{en:'OK Studio, own experiments and commercial pieces',uk:'OK Studio, власні експерименти та комерційні роботи'},
   disc:{en:'3D, motion design',uk:'3D, моушн-дизайн'},
-  loop:A+'3d/l3.mp4',poster:A+'3d/l3.webp',
+  loop:A+'3d/tkanloop.mp4',poster:A+'3d/tkan.webp',
   lead:{en:'Materials, physics and light: the 3D lab where we test textures and motion before they go into client work.',uk:'Матеріали, фізика й світло: 3D-лабораторія, де ми пробуємо текстури та рух, перш ніж вони потраплять у клієнтські проєкти.'},
   did:{en:['3D model and animation for a crypto exchange promo','Soft-body and cloth simulations','Abstract loops for intros and backgrounds'],uk:['3D-модель та анімація для промо криптобіржі','Симуляції мʼяких тіл і тканини','Абстрактні лупи для заставок і фонів']},
   galCols:3,
-  gal:[{src:A+'3d/model.mp4',poster:A+'3d/model.webp',k:'w',v:1},{src:A+'3d/l1.mp4',poster:A+'3d/l1.webp',k:'h',v:1},{src:A+'3d/l2.mp4',poster:A+'3d/l2.webp',k:'h',v:1},{src:A+'3d/l4.mp4',poster:A+'3d/l4.webp',k:'h',v:1},{src:A+'3d/l5.mp4',poster:A+'3d/l5.webp',k:'h',v:1},{src:A+'3d/l7.mp4',poster:A+'3d/l7.webp',k:'h',v:1},{src:A+'3d/l8.mp4',poster:A+'3d/l8.webp',k:'h',v:1}]},
+  gal:[{src:A+'3d/tkan.mp4',poster:A+'3d/tkan.webp',k:'w',v:1},{src:A+'3d/model.mp4',poster:A+'3d/model.webp',k:'w',v:1},{src:A+'3d/l1.mp4',poster:A+'3d/l1.webp',k:'h',v:1},{src:A+'3d/l2.mp4',poster:A+'3d/l2.webp',k:'h',v:1},{src:A+'3d/l4.mp4',poster:A+'3d/l4.webp',k:'h',v:1},{src:A+'3d/l5.mp4',poster:A+'3d/l5.webp',k:'h',v:1},{src:A+'3d/l7.mp4',poster:A+'3d/l7.webp',k:'h',v:1},{src:A+'3d/l8.mp4',poster:A+'3d/l8.webp',k:'h',v:1}]},
 
  {id:'arts',no:'12',color:'#3a1410',c2:'#e9473b',year:'2023–26',
   title:{en:'Arts',uk:'Арт'},
@@ -616,7 +626,7 @@ var T={
  nWork:{en:'Work',uk:'Роботи'},nStudio:{en:'Studio',uk:'Студія'},nServices:{en:'Services',uk:'Послуги'},nContact:{en:'Contact',uk:'Контакт'},
  hero:{en:['Everything good','you do deserves','to be <em>seen.</em>'],uk:['Усе добре, що','ви робите, заслуговує','бути <em>побаченим.</em>']},
  heroSub:{en:'OK Studio makes websites, identity and film for organisations and businesses that do meaningful work.',uk:'OK Studio створює сайти, айдентику та відео для організацій і бізнесу, які роблять важливу справу.'},
- heroMeta:{en:'Design & film studio · Vinnytsia, UA',uk:'Студія дизайну та відео · Вінниця'},
+ heroMeta:{en:'Design & film studio · USA / Ukraine',uk:'Студія дизайну та відео · USA / Ukraine'},
  scroll:{en:'Scroll',uk:'Гортайте'},
  mq:{en:['Websites','E-shops','Identity','Animation','Film','Campaigns','AI automation','AI implementation'],uk:['Сайти','E-shop','Айдентика','Анімація','Відео','Кампанії','ШІ-автоматизація','Впровадження ШІ']},
  redL:{en:'(What we make)',uk:'(Що ми робимо)'},redPre:{en:'OK Studio makes',uk:'OK Studio робить'},
@@ -636,7 +646,7 @@ var T={
  a1h:{en:'NGOs, foundations and grant recipients',uk:'ГО, фонди та грантоотримувачі'},
  a1p:{en:'You need to show results to donors, partners and the community. We deliver a site, identity and video that meet donor visibility requirements, turnkey.',uk:'Вам треба показати результати донору, партнерам і громаді. Ми робимо сайт, айдентику та відео, що відповідають вимогам видимості донора, під ключ.'},
  a1w:{en:'4–8 weeks',uk:'4–8 тижнів'},
- a2h:{en:'Mid-size business',uk:'Середній бізнес'},
+ a2h:{en:'Business',uk:'Бізнес'},
  a2p:{en:'Your site and image don’t bring clients. We build a site and identity that earn trust and turn visitors into enquiries.',uk:'Ваш сайт і образ не приводять клієнтів. Ми робимо сайт і айдентику, які викликають довіру та перетворюють відвідувачів на заявки.'},
  a2w:{en:'6–8 weeks',uk:'6–8 тижнів'},
  prH:{en:'How we work',uk:'Як ми працюємо'},prP:{en:'Six stages, each one approved. You always see where we are.',uk:'Шість етапів, кожен погоджений. Ви завжди бачите, де ми зараз.'},
@@ -646,7 +656,7 @@ var T={
  ctH:{en:'Let’s make it <em>seen.</em>',uk:'Зробімо це <em>помітним.</em>'},
  ctP:{en:'Tell us who you are, what needs to be shown, to whom, and by when. We will come back with a format, a timeline and a cost.',uk:'Розкажіть, хто ви, що треба показати, кому й до якої дати. Ми повернемося з форматом, строком і вартістю.'},
  ctB:{en:'Start a project',uk:'Почати проєкт'},
- foot:{en:'Vinnytsia, Ukraine',uk:'Вінниця, Україна'},
+ foot:{en:'Based in USA / Ukraine',uk:'Based in USA / Ukraine'},
  view:{en:'View',uk:'Дивитись'},play:{en:'Play',uk:'Грати'},next:{en:'Next',uk:'Далі'},go:{en:'Go',uk:'Вперед'},
  back:{en:'All work',uk:'Усі роботи'},lClient:{en:'Client',uk:'Клієнт'},lYear:{en:'Year',uk:'Рік'},lDur:{en:'Duration',uk:'Тривалість'},lDisc:{en:'Discipline',uk:'Напрям'},
  lChal:{en:'(Challenge)',uk:'(Виклик)'},lDid:{en:'(What we did)',uk:'(Що ми зробили)'},lHard:{en:'The hardest part',uk:'Найскладніше'},lRes:{en:'(Results)',uk:'(Результати)'},lFilms:{en:'(Films)',uk:'(Відео)'},lGal:{en:'(Frames)',uk:'(Кадри)'},lNext:{en:'Next project',uk:'Наступний проєкт'}
@@ -846,7 +856,7 @@ function renderCase(id,keep){
   if(p.res)h+='<section class="c-block" style="--pc2:'+p.c2+'"><h2 class="lbl mono">'+T.lRes[lang]+'</h2><div class="bd c-res">'+p.res.map(function(r){return '<div><b>'+r[0]+'</b><span>'+tx(r[1])+'</span></div>'}).join('')+'</div></section>';
   if(p.films)h+='<section class="c-block"><h2 class="lbl mono">'+T.lFilms[lang]+'</h2><div class="bd films'+(p.vert?' vert':'')+'">'+p.films.map(function(f){return '<figure class="'+(f.wide?'wide':'')+'" data-cursor="play"><video src="'+f.src+'" poster="'+f.poster+'" controls playsinline preload="none"></video><figcaption class="mono">'+tx(f.cap)+'</figcaption></figure>'}).join('')+'</div></section>';
   if(p.note)h+='<section class="c-block"><h2 class="lbl mono">'+T.lFilms[lang]+'</h2><div class="bd"><p class="c-note">'+tx(p.note)+'</p></div></section>';
-  if(p.gal)h+='<section class="c-block" style="border:0;padding-top:0"><h2 class="lbl mono">'+T.lGal[lang]+'</h2><div class="bd gal'+(p.galCols===3?' gal3':'')+'">'+p.gal.map(function(g){return '<figure class="'+g.k+'">'+(g.v?'<video src="'+g.src+'" poster="'+g.poster+'" muted loop playsinline autoplay preload="metadata"></video>':'<img src="'+g.src+'" alt="" loading="lazy">')+'</figure>'}).join('')+'</div></section>';
+  if(p.gal)h+='<section class="c-block" style="border:0;padding-top:0"><h2 class="lbl mono">'+T.lGal[lang]+'</h2><div class="bd gal'+(p.galCols===3?' gal3':'')+'">'+p.gal.map(function(g){return '<figure class="'+g.k+'"'+(g.d?' style="--d:'+g.d+'s"':'')+'>'+(g.v?'<video src="'+g.src+'" poster="'+g.poster+'" muted loop playsinline autoplay preload="metadata"></video>':'<img src="'+g.src+'" alt="" loading="lazy">')+(g.cap?'<figcaption class="mono">'+tx(g.cap)+'</figcaption>':'')+'</figure>'}).join('')+'</div></section>';
   h+='</div>';
   h+='<a class="next" href="#case-'+nx.id+'" data-id="'+nx.id+'" data-cursor="next"><div class="n-media">'+media(nx)+'</div><div class="wrap"><span class="mono" style="color:var(--mute)">'+T.lNext[lang]+' · '+nx.no+'</span><span class="n-title">'+tx(nx.title)+'</span></div></a>';
   caseEl.innerHTML=h;
@@ -920,7 +930,7 @@ document.addEventListener('click',function(e){
 $$('[data-lang]').forEach(function(b){b.addEventListener('click',function(){lang=b.getAttribute('data-lang');renderText()})});
 
 /* clock */
-function tick(){try{$('#clock').textContent=(lang==='uk'?'Вінниця ':'Vinnytsia ')+new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:'Europe/Kyiv'}).format(new Date())}catch(e){}}
+function tick(){try{var f=function(z){return new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:z}).format(new Date())};$('#clock').textContent='NYC '+f('America/New_York')+' · KYIV '+f('Europe/Kyiv')}catch(e){}}
 tick();setInterval(tick,20000);
 
 /* ---------- boot ---------- */
