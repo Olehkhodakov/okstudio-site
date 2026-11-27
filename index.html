@@ -205,6 +205,28 @@ section.sec{padding:clamp(5rem,11vw,10rem) 0}
 .step.on h3{color:var(--ink);transform:none}
 .step.on p{color:#d8d3cb}
 .pay{margin-top:2.5rem;color:var(--mute)}
+.prc{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.pc{position:relative;display:flex;flex-direction:column;padding:clamp(1.6rem,2.6vw,2.4rem);border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:460px;overflow:hidden;isolation:isolate}
+.pc::before{content:"";position:absolute;inset:0;background:var(--accent);transform:scaleY(0);transform-origin:bottom;transition:transform .7s var(--ease);z-index:-1}
+.pc:hover::before{transform:scaleY(1)}.pc:hover,.pc:hover p,.pc:hover .pc-k,.pc:hover li,.pc:hover small{color:#140705}.pc:hover li::before{background:#140705}
+.pc-k{color:var(--mute);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.pc h3{font:500 clamp(1.4rem,2.2vw,2rem)/1.05 var(--disp);letter-spacing:-.05em;margin:.9rem 0 1.4rem;max-width:14ch}
+.pc-p b{display:flex;align-items:baseline;gap:.5rem;font:400 clamp(2.8rem,4.6vw,4.4rem)/.9 var(--disp);letter-spacing:-.07em;font-variant-numeric:tabular-nums}
+.pc-p small{font:400 .85rem var(--mono);letter-spacing:.06em;color:var(--mute);text-transform:uppercase}
+.pc-p .on-req{font-size:clamp(2rem,3.2vw,3rem)}
+.pc p{color:var(--mute);margin:1.1rem 0 1.4rem;max-width:34ch;line-height:1.5}
+.pc ul{list-style:none;display:grid;gap:.55rem;margin-bottom:2rem}.pc li{position:relative;padding-left:1.2rem;font-size:.95rem}
+.pc li::before{content:"";position:absolute;left:0;top:.6em;width:.5rem;height:2px;background:var(--accent)}
+.pc-a{margin-top:auto;display:inline-flex;gap:.5rem;align-items:center;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:.3rem;align-self:flex-start}
+.pc-a i{font-style:normal;transition:transform .3s}.pc:hover .pc-a i{transform:translateX(4px)}
+.pc-tag{position:absolute;top:clamp(1.6rem,2.6vw,2.4rem);right:clamp(1.6rem,2.6vw,2.4rem);background:var(--accent);color:#140705;border-radius:99px;padding:.3rem .7rem;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase}
+.pc:hover .pc-tag{background:#140705;color:var(--accent)}
+.pc-x{background:var(--bg2)}
+.prc-foot{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;margin-top:2.2rem}.prc-foot p{color:var(--mute);max-width:70ch}
+.cta-s{display:inline-flex;gap:.8rem;align-items:center;background:var(--ink);color:var(--bg);border-radius:99px;padding:1rem 1.6rem;font:500 1rem var(--body,inherit);white-space:nowrap;transition:background .3s}
+.cta-s i{font-style:normal}.cta-s:hover{background:var(--accent)}
+@media (max-width:1000px){.prc{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.prc{grid-template-columns:1fr}.pc{min-height:0}.prc-foot{grid-template-columns:1fr}}
 
 /* contact */
 .contact{padding:clamp(6rem,14vw,12rem) 0 3rem}
@@ -361,6 +383,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
     <a href="#work" data-nav data-i="nWork">Work</a>
     <a href="#studio" data-nav data-i="nStudio">Studio</a>
     <a href="#services" data-nav data-i="nServices">Services</a>
+    <a href="#pricing" data-nav data-i="nPrice">Prices</a>
     <a href="#contact" data-nav data-i="nContact">Contact</a>
   </nav>
   <div class="right">
@@ -411,8 +434,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
       <p class="mono" style="color:var(--mute);margin-bottom:2rem" data-i="studioL"></p>
       <p class="manifesto" id="manifesto"></p>
       <div class="stats">
-        <div class="stat"><b>10</b><span data-i="st1"></span></div>
-        <div class="stat"><b>200k</b><span data-i="st2"></span></div>
+        <div class="stat"><b>25+</b><span data-i="st1"></span></div>
+        <div class="stat"><b>20M</b><span data-i="st2"></span></div>
         <div class="stat"><b>4–8</b><span data-i="st3"></span></div>
       </div>
     </div>
@@ -429,6 +452,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
     <div class="wrap">
       <div class="sec-top"><h2 data-i="svcH"></h2><p data-i="svcP"></p></div>
       <div class="svc" id="svc"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="pricing" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-top"><h2 data-i="prcH"></h2><p data-i="prcP"></p></div>
+      <div class="prc" id="prc"></div>
+      <div class="prc-foot"><p data-i="prcNote"></p><a class="cta-s" href="#contact" data-nav data-cursor="go"><span data-i="prcCta"></span><i>→</i></a></div>
     </div>
   </section>
 
@@ -644,7 +675,7 @@ var P=[
 
 var T={
  loading:{en:'Loading reel',uk:'Завантаження'},
- nWork:{en:'Work',uk:'Роботи'},nStudio:{en:'Studio',uk:'Студія'},nServices:{en:'Services',uk:'Послуги'},nContact:{en:'Contact',uk:'Контакт'},
+ nWork:{en:'Work',uk:'Роботи'},nStudio:{en:'Studio',uk:'Студія'},nServices:{en:'Services',uk:'Послуги'},nContact:{en:'Contact',uk:'Контакт'},nPrice:{en:'Prices',uk:'Ціни'},
  hero:{en:['Everything good','you do deserves','to be <em>seen.</em>'],uk:['Усе добре, що','ви робите, заслуговує','бути <em>побаченим.</em>']},
  heroSub:{en:'OK Studio makes websites, identity and film for organisations and businesses that do meaningful work.',uk:'OK Studio створює сайти, айдентику та відео для організацій і бізнесу, які роблять важливу справу.'},
  heroMeta:{en:'Design & film studio · USA / Ukraine',uk:'Студія дизайну та відео · USA / Ukraine'},
@@ -658,7 +689,25 @@ var T={
  cProject:{en:'Project',uk:'Проєкт'},cClient:{en:'Client',uk:'Клієнт'},cDisc:{en:'Discipline',uk:'Напрям'},cYear:{en:'Year',uk:'Рік'},
  studioL:{en:'(Studio)',uk:'(Студія)'},
  manifesto:{en:'We reveal the value of businesses and organisations so they get <em>noticed,</em> understood and chosen. From the first brief to the finished film, every stage is visible and approved.',uk:'Ми розкриваємо цінність бізнесів і організацій, щоб їх <em>помітили,</em> зрозуміли й обрали. Від першого брифу до готового фільму кожен етап видимий і погоджений.'},
- st1:{en:'completed projects',uk:'завершених проєктів'},st2:{en:'total reach of our campaigns',uk:'загальне охоплення наших кампаній'},st3:{en:'weeks from brief to launch',uk:'тижнів від брифу до запуску'},
+ st1:{en:'completed projects',uk:'завершених проєктів'},st2:{en:'views of our films and campaigns',uk:'переглядів наших відео та кампаній'},st3:{en:'weeks from brief to launch',uk:'тижнів від брифу до запуску'},
+ prcH:{en:'Prices',uk:'Ціни'},
+ prcP:{en:'Starting prices for the most popular formats. The exact quote comes after a short brief, fixed before we start.',uk:'Стартові ціни на найпопулярніші формати. Точну вартість фіксуємо після короткого брифу, ще до старту робіт.'},
+ prcNote:{en:'Prices in USD. Everything else, from a full-length film to branding, presentations and AI automation, is quoted individually. Payment is staged: you pay for what you have seen and approved.',uk:'Ціни в доларах США. Усе інше, від повноцінного фільму до брендингу, презентацій і ШІ-автоматизації, оцінюємо індивідуально. Оплата поетапна: ви платите за те, що вже побачили й погодили.'},
+ prcCta:{en:'Get a quote',uk:'Отримати розрахунок'},prcAsk:{en:'Discuss',uk:'Обговорити'},prcFrom:{en:'from',uk:'від'},
+ price:{en:[
+  ['Website','Business-card site','$500',1,'One page that explains who you are, what you do and how to reach you.',['Design and development','Mobile version','Contact form and analytics','Basic SEO'],''],
+  ['E-commerce','Online store','$2,500',1,'A store that customers can find, compare and pay in without friction.',['UX/UI for catalogue, product page and checkout','Payments and delivery','Admin panel','Desktop and mobile'],''],
+  ['Video','AI video','$35',0,'per 10 seconds. Fast generated scenes for social media, presentations and tests.',['Script and prompt design','Voice-over and music','Formats 16:9, 9:16, 1:1','2 rounds of edits'],'New'],
+  ['Motion','2D animation','$50',0,'per 10 seconds. Explainers and characters that make complex things simple.',['Script and storyboard','Illustration and animation','Sound design','2 rounds of edits'],''],
+  ['Campaign','Ad campaign','$500',1,'One idea carried across every channel where your audience lives.',['Concept and key visual','Set of social media creatives','Adaptations for ads and print','Launch plan'],'Popular'],
+  ['Custom','Full film and other services','',2,'Brand and documentary films, filming, branding, presentations, AI automation.',['Estimate after a 20-minute call','Fixed price before start','Staged payment'],'']],
+ uk:[
+  ['Сайт','Сайт-візитка','$500',1,'Одна сторінка, яка пояснює, хто ви, що робите і як з вами звʼязатися.',['Дизайн і розробка','Мобільна версія','Форма заявки та аналітика','Базове SEO'],''],
+  ['E-commerce','Інтернет-магазин','$2 500',1,'Магазин, у якому клієнт легко знаходить, порівнює й оплачує.',['UX/UI каталогу, картки товару й оформлення','Оплата й доставка','Адмінпанель','Десктоп і мобайл'],''],
+  ['Відео','ШІ-відео','$35',0,'за 10 секунд. Швидкі згенеровані сцени для соцмереж, презентацій і тестів.',['Сценарій і промпти','Озвучка й музика','Формати 16:9, 9:16, 1:1','2 раунди правок'],'Нове'],
+  ['Моушн','2D-анімація','$50',0,'за 10 секунд. Пояснювальні ролики й персонажі, що роблять складне простим.',['Сценарій і сторіборд','Ілюстрація та анімація','Саунд-дизайн','2 раунди правок'],''],
+  ['Кампанія','Рекламна кампанія','$500',1,'Одна ідея, розгорнута в усіх каналах, де є ваша аудиторія.',['Концепція і ключовий візуал','Набір креативів для соцмереж','Адаптації для реклами й друку','План запуску'],'Популярне'],
+  ['Індивідуально','Повноцінний фільм та інші послуги','',2,'Імідж- і документальні фільми, зйомки, брендинг, презентації, ШІ-автоматизація.',['Оцінка після 20-хвилинного дзвінка','Фіксована ціна до старту','Поетапна оплата'],'']]},
  svcH:{en:'What we make',uk:'Що ми робимо'},
  svcP:{en:'The core is the material you show the world. Advertising comes as an add-on to the same project.',uk:'Основа: матеріали, які ви показуєте світу. Реклама йде як доповнення до того самого проєкту.'},
  svc:{en:[['Websites & e-shops','Sites and shops that turn visitors into enquiries: structure, UX/UI, build, two languages.',['UX/UI','E-commerce','Bilingual','SEO']],['Identity','A visual language your team can use every day: logo, brandbook, templates, merch.',['Logo','Brandbook','Templates','Merch']],['Film & animation','From script to final cut: filming, motion graphics, character animation, language versions.',['Script','Filming','Motion','UA / EN']],['Campaigns','Google and Meta advertising that carries the same materials to the right people.',['Google Ads','Meta','Visibility']],['AI automation','We bring AI into your daily work: assistants, automated content and reporting, connected tools.',['AI agents','Automation','Integration']]],
@@ -705,6 +754,8 @@ function renderText(){
   if(window.__flipReset)window.__flipReset();
   var m=T.manifesto[lang].split(/(<em>.*?<\/em>)|\s+/).filter(Boolean);
   $('#manifesto').innerHTML=m.map(function(w){return w.indexOf('<em>')===0?'<span class="w">'+w+'</span>':'<span class="w">'+w+'</span>'}).join(' ');
+  $('#prc').innerHTML=T.price[lang].map(function(c){var p=c[3]===2?'<b class="on-req">'+(lang==='uk'?'За запитом':'On request')+'</b>':'<b>'+(c[3]===1?'<small>'+T.prcFrom[lang]+'</small>':'')+c[2]+'</b>';
+    return '<article class="pc'+(c[3]===2?' pc-x':'')+'">'+(c[6]?'<span class="pc-tag mono">'+c[6]+'</span>':'')+'<span class="mono pc-k">'+c[0]+'</span><h3>'+c[1]+'</h3><div class="pc-p">'+p+'</div><p>'+c[4]+'</p><ul>'+c[5].map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul><a class="pc-a mono" href="#contact" data-nav data-cursor="go">'+T.prcAsk[lang]+' <i>→</i></a></article>'}).join('');
   $('#svc').innerHTML=T.svc[lang].map(function(s,i){return '<div class="svc-row"><span class="mono">0'+(i+1)+'</span><h3>'+s[0]+'</h3><div><p>'+s[1]+'</p><div class="tags">'+s[2].map(function(t){return '<span>'+t+'</span>'}).join('')+'</div></div></div>'}).join('');
   $('#steps').innerHTML=T.steps[lang].map(function(s){return '<div class="step"><h3>'+s[0]+'</h3><p>'+s[1]+'</p></div>'}).join('');
   $('#rows').innerHTML=P.map(function(p){
