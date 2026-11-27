@@ -222,6 +222,8 @@ section.sec{padding:clamp(5rem,11vw,10rem) 0}
 .pc-tag{position:absolute;top:clamp(1.6rem,2.6vw,2.4rem);right:clamp(1.6rem,2.6vw,2.4rem);background:var(--accent);color:#140705;border-radius:99px;padding:.3rem .7rem;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase}
 .pc:hover .pc-tag{background:#140705;color:var(--accent)}
 .pc-x{background:var(--bg2)}
+.pc-x{grid-column:1/-1;min-height:0}.pc-x h3{max-width:none}.pc-x p{max-width:60ch}.pc-x ul{grid-auto-flow:column;justify-content:start;gap:.6rem 2.6rem}
+@media (max-width:640px){.pc-x ul{grid-auto-flow:row}}
 .prc-foot{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;margin-top:2.2rem}.prc-foot p{color:var(--mute);max-width:70ch}
 .cta-s{display:inline-flex;gap:.8rem;align-items:center;background:var(--ink);color:var(--bg);border-radius:99px;padding:1rem 1.6rem;font:500 1rem var(--body,inherit);white-space:nowrap;transition:background .3s}
 .cta-s i{font-style:normal}.cta-s:hover{background:var(--accent)}
@@ -697,16 +699,18 @@ var T={
  price:{en:[
   ['Website','Business-card site','$500',1,'One page that explains who you are, what you do and how to reach you.',['Design and development','Mobile version','Contact form and analytics','Basic SEO'],''],
   ['E-commerce','Online store','$2,500',1,'A store that customers can find, compare and pay in without friction.',['UX/UI for catalogue, product page and checkout','Payments and delivery','Admin panel','Desktop and mobile'],''],
+  ['Campaign','Ad campaign','$500',1,'One idea carried across every channel where your audience lives.',['Concept and key visual','Set of social media creatives','Adaptations for ads and print','Launch plan'],'Popular'],
   ['Video','AI video','$35',0,'per 10 seconds. Fast generated scenes for social media, presentations and tests.',['Script and prompt design','Voice-over and music','Formats 16:9, 9:16, 1:1','2 rounds of edits'],'New'],
   ['Motion','2D animation','$50',0,'per 10 seconds. Explainers and characters that make complex things simple.',['Script and storyboard','Illustration and animation','Sound design','2 rounds of edits'],''],
-  ['Campaign','Ad campaign','$500',1,'One idea carried across every channel where your audience lives.',['Concept and key visual','Set of social media creatives','Adaptations for ads and print','Launch plan'],'Popular'],
+  ['3D','3D animation','$80',0,'per 10 seconds. Products, abstract loops and scenes that look real.',['Modelling and texturing','Lighting and render','Animation and sound','2 rounds of edits'],''],
   ['Custom','Full film and other services','',2,'Brand and documentary films, filming, branding, presentations, AI automation.',['Estimate after a 20-minute call','Fixed price before start','Staged payment'],'']],
  uk:[
   ['Сайт','Сайт-візитка','$500',1,'Одна сторінка, яка пояснює, хто ви, що робите і як з вами звʼязатися.',['Дизайн і розробка','Мобільна версія','Форма заявки та аналітика','Базове SEO'],''],
   ['E-commerce','Інтернет-магазин','$2 500',1,'Магазин, у якому клієнт легко знаходить, порівнює й оплачує.',['UX/UI каталогу, картки товару й оформлення','Оплата й доставка','Адмінпанель','Десктоп і мобайл'],''],
+  ['Кампанія','Рекламна кампанія','$500',1,'Одна ідея, розгорнута в усіх каналах, де є ваша аудиторія.',['Концепція і ключовий візуал','Набір креативів для соцмереж','Адаптації для реклами й друку','План запуску'],'Популярне'],
   ['Відео','ШІ-відео','$35',0,'за 10 секунд. Швидкі згенеровані сцени для соцмереж, презентацій і тестів.',['Сценарій і промпти','Озвучка й музика','Формати 16:9, 9:16, 1:1','2 раунди правок'],'Нове'],
   ['Моушн','2D-анімація','$50',0,'за 10 секунд. Пояснювальні ролики й персонажі, що роблять складне простим.',['Сценарій і сторіборд','Ілюстрація та анімація','Саунд-дизайн','2 раунди правок'],''],
-  ['Кампанія','Рекламна кампанія','$500',1,'Одна ідея, розгорнута в усіх каналах, де є ваша аудиторія.',['Концепція і ключовий візуал','Набір креативів для соцмереж','Адаптації для реклами й друку','План запуску'],'Популярне'],
+  ['3D','3D-анімація','$80',0,'за 10 секунд. Продукти, абстрактні лупи та сцени, що виглядають реально.',['Моделювання й текстури','Світло та рендер','Анімація і звук','2 раунди правок'],''],
   ['Індивідуально','Повноцінний фільм та інші послуги','',2,'Імідж- і документальні фільми, зйомки, брендинг, презентації, ШІ-автоматизація.',['Оцінка після 20-хвилинного дзвінка','Фіксована ціна до старту','Поетапна оплата'],'']]},
  svcH:{en:'What we make',uk:'Що ми робимо'},
  svcP:{en:'The core is the material you show the world. Advertising comes as an add-on to the same project.',uk:'Основа: матеріали, які ви показуєте світу. Реклама йде як доповнення до того самого проєкту.'},
