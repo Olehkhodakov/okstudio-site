@@ -213,6 +213,7 @@ section.sec{padding:clamp(5rem,11vw,10rem) 0}
 .pc h3{font:500 clamp(1.4rem,2.2vw,2rem)/1.05 var(--disp);letter-spacing:-.05em;margin:.9rem 0 1.4rem;max-width:14ch}
 .pc-p b{display:flex;align-items:baseline;gap:.5rem;font:400 clamp(2.8rem,4.6vw,4.4rem)/.9 var(--disp);letter-spacing:-.07em;font-variant-numeric:tabular-nums}
 .pc-p small{font:400 .85rem var(--mono);letter-spacing:.06em;color:var(--mute);text-transform:uppercase}
+.pc-p .pc-old{font:400 clamp(1.1rem,1.6vw,1.5rem) var(--disp);color:var(--mute);letter-spacing:-.03em;margin-left:.3rem}.pc:hover .pc-old{color:#140705}
 .pc-p .on-req{font-size:clamp(2rem,3.2vw,3rem)}
 .pc p{color:var(--mute);margin:1.1rem 0 1.4rem;max-width:34ch;line-height:1.5}
 .pc ul{list-style:none;display:grid;gap:.55rem;margin-bottom:2rem}.pc li{position:relative;padding-left:1.2rem;font-size:.95rem}
@@ -698,19 +699,19 @@ var T={
  prcCta:{en:'Get a quote',uk:'Отримати розрахунок'},prcAsk:{en:'Discuss',uk:'Обговорити'},prcFrom:{en:'from',uk:'від'},
  price:{en:[
   ['Website','Business-card site','$500',1,'One page that explains who you are, what you do and how to reach you.',['Design and development','Mobile version','Contact form and analytics','Basic SEO'],''],
-  ['E-commerce','Online store','$2,500',1,'A store that customers can find, compare and pay in without friction.',['UX/UI for catalogue, product page and checkout','Payments and delivery','Admin panel','Desktop and mobile'],''],
-  ['Campaign','Ad campaign','$500',1,'One idea carried across every channel where your audience lives.',['Concept and key visual','Set of social media creatives','Adaptations for ads and print','Launch plan'],'Popular'],
+  ['E-commerce','Online store','$2,250',1,'A store that customers can find, compare and pay in without friction.',['UX/UI for catalogue, product page and checkout','Payments and delivery','Admin panel','Desktop and mobile'],'−10%','$2,500'],
+  ['Campaign','Ad campaign','$800',1,'One idea carried across every channel where your audience lives.',['Concept and key visual','Set of social media creatives','Adaptations for ads and print','Launch plan'],'Popular'],
   ['Video','AI video','$35',0,'per 10 seconds. Fast generated scenes for social media, presentations and tests.',['Script and prompt design','Voice-over and music','Formats 16:9, 9:16, 1:1','2 rounds of edits'],'New'],
-  ['Motion','2D animation','$50',0,'per 10 seconds. Explainers and characters that make complex things simple.',['Script and storyboard','Illustration and animation','Sound design','2 rounds of edits'],''],
-  ['3D','3D animation','$80',0,'per 10 seconds. Products, abstract loops and scenes that look real.',['Modelling and texturing','Lighting and render','Animation and sound','2 rounds of edits'],''],
+  ['Motion','2D animation','$300',1,'per minute. Explainers and characters that make complex things simple.',['Script and storyboard','Illustration and animation','Sound design','2 rounds of edits'],''],
+  ['3D','3D animation','$480',1,'per minute. Products, abstract loops and scenes that look real.',['Modelling and texturing','Lighting and render','Animation and sound','2 rounds of edits'],''],
   ['Custom','Full film and other services','',2,'Brand and documentary films, filming, branding, presentations, AI automation.',['Estimate after a 20-minute call','Fixed price before start','Staged payment'],'']],
  uk:[
   ['Сайт','Сайт-візитка','$500',1,'Одна сторінка, яка пояснює, хто ви, що робите і як з вами звʼязатися.',['Дизайн і розробка','Мобільна версія','Форма заявки та аналітика','Базове SEO'],''],
-  ['E-commerce','Інтернет-магазин','$2 500',1,'Магазин, у якому клієнт легко знаходить, порівнює й оплачує.',['UX/UI каталогу, картки товару й оформлення','Оплата й доставка','Адмінпанель','Десктоп і мобайл'],''],
-  ['Кампанія','Рекламна кампанія','$500',1,'Одна ідея, розгорнута в усіх каналах, де є ваша аудиторія.',['Концепція і ключовий візуал','Набір креативів для соцмереж','Адаптації для реклами й друку','План запуску'],'Популярне'],
+  ['E-commerce','Інтернет-магазин','$2 250',1,'Магазин, у якому клієнт легко знаходить, порівнює й оплачує.',['UX/UI каталогу, картки товару й оформлення','Оплата й доставка','Адмінпанель','Десктоп і мобайл'],'−10%','$2 500'],
+  ['Кампанія','Рекламна кампанія','$800',1,'Одна ідея, розгорнута в усіх каналах, де є ваша аудиторія.',['Концепція і ключовий візуал','Набір креативів для соцмереж','Адаптації для реклами й друку','План запуску'],'Популярне'],
   ['Відео','ШІ-відео','$35',0,'за 10 секунд. Швидкі згенеровані сцени для соцмереж, презентацій і тестів.',['Сценарій і промпти','Озвучка й музика','Формати 16:9, 9:16, 1:1','2 раунди правок'],'Нове'],
-  ['Моушн','2D-анімація','$50',0,'за 10 секунд. Пояснювальні ролики й персонажі, що роблять складне простим.',['Сценарій і сторіборд','Ілюстрація та анімація','Саунд-дизайн','2 раунди правок'],''],
-  ['3D','3D-анімація','$80',0,'за 10 секунд. Продукти, абстрактні лупи та сцени, що виглядають реально.',['Моделювання й текстури','Світло та рендер','Анімація і звук','2 раунди правок'],''],
+  ['Моушн','2D-анімація','$300',1,'за хвилину. Пояснювальні ролики й персонажі, що роблять складне простим.',['Сценарій і сторіборд','Ілюстрація та анімація','Саунд-дизайн','2 раунди правок'],''],
+  ['3D','3D-анімація','$480',1,'за хвилину. Продукти, абстрактні лупи та сцени, що виглядають реально.',['Моделювання й текстури','Світло та рендер','Анімація і звук','2 раунди правок'],''],
   ['Індивідуально','Повноцінний фільм та інші послуги','',2,'Імідж- і документальні фільми, зйомки, брендинг, презентації, ШІ-автоматизація.',['Оцінка після 20-хвилинного дзвінка','Фіксована ціна до старту','Поетапна оплата'],'']]},
  svcH:{en:'What we make',uk:'Що ми робимо'},
  svcP:{en:'The core is the material you show the world. Advertising comes as an add-on to the same project.',uk:'Основа: матеріали, які ви показуєте світу. Реклама йде як доповнення до того самого проєкту.'},
@@ -758,7 +759,7 @@ function renderText(){
   if(window.__flipReset)window.__flipReset();
   var m=T.manifesto[lang].split(/(<em>.*?<\/em>)|\s+/).filter(Boolean);
   $('#manifesto').innerHTML=m.map(function(w){return w.indexOf('<em>')===0?'<span class="w">'+w+'</span>':'<span class="w">'+w+'</span>'}).join(' ');
-  $('#prc').innerHTML=T.price[lang].map(function(c){var p=c[3]===2?'<b class="on-req">'+(lang==='uk'?'За запитом':'On request')+'</b>':'<b>'+(c[3]===1?'<small>'+T.prcFrom[lang]+'</small>':'')+c[2]+'</b>';
+  $('#prc').innerHTML=T.price[lang].map(function(c){var p=c[3]===2?'<b class="on-req">'+(lang==='uk'?'За запитом':'On request')+'</b>':'<b>'+(c[3]===1?'<small>'+T.prcFrom[lang]+'</small>':'')+c[2]+(c[7]?'<s class="pc-old">'+c[7]+'</s>':'')+'</b>';
     return '<article class="pc'+(c[3]===2?' pc-x':'')+'">'+(c[6]?'<span class="pc-tag mono">'+c[6]+'</span>':'')+'<span class="mono pc-k">'+c[0]+'</span><h3>'+c[1]+'</h3><div class="pc-p">'+p+'</div><p>'+c[4]+'</p><ul>'+c[5].map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul><a class="pc-a mono" href="#contact" data-nav data-cursor="go">'+T.prcAsk[lang]+' <i>→</i></a></article>'}).join('');
   $('#svc').innerHTML=T.svc[lang].map(function(s,i){return '<div class="svc-row"><span class="mono">0'+(i+1)+'</span><h3>'+s[0]+'</h3><div><p>'+s[1]+'</p><div class="tags">'+s[2].map(function(t){return '<span>'+t+'</span>'}).join('')+'</div></div></div>'}).join('');
   $('#steps').innerHTML=T.steps[lang].map(function(s){return '<div class="step"><h3>'+s[0]+'</h3><p>'+s[1]+'</p></div>'}).join('');
